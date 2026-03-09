@@ -37,33 +37,20 @@
       }
 
       header {
-        padding: 1.2rem 0 0.6rem;
+        padding: 1.2rem 0 0.25rem;
+        text-align: center;
       }
 
       .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        width: fit-content;
-        padding: 0.62rem 0.9rem;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(27, 40, 63, 0.12);
-        box-shadow: 0 10px 22px rgba(27, 40, 63, 0.08);
-      }
-
-      .brand-mark {
-        width: 2rem;
-        height: 2rem;
         display: block;
+        width: min(360px, 74vw);
+        margin: 0 auto;
       }
 
-      .brand-text {
-        font-size: 0.84rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-        color: var(--navy);
+      .brand-logo {
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
       section {
@@ -260,6 +247,16 @@
         padding: 1.35rem;
       }
 
+      .coach-photo {
+        width: 100%;
+        max-width: 380px;
+        border-radius: 1rem;
+        display: block;
+        margin: 0 auto 1rem;
+        object-fit: cover;
+        box-shadow: var(--shadow-soft);
+      }
+
       .bio p {
         margin: 0;
       }
@@ -322,17 +319,7 @@
   <body>
     <header class="container">
       <div class="brand" aria-label="Charleston Longevity Fitness brand">
-        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
-          <circle cx="32" cy="32" r="30" stroke="#1b283f" stroke-width="2.5" />
-          <circle cx="32" cy="32" r="22" stroke="#c7a56a" stroke-width="2" />
-          <path d="M32 11L34.9 20.2H45L36.9 25.8L39.9 35L32 29.3L24.1 35L27.1 25.8L19 20.2H29.1L32 11Z" fill="#c7a56a" />
-          <path d="M25 48H39" stroke="#1b283f" stroke-width="2.5" stroke-linecap="round" />
-          <path d="M27 48V25.6H37V48" stroke="#1b283f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M30.3 30.5H33.7" stroke="#c7a56a" stroke-width="2" stroke-linecap="round" />
-          <path d="M30.3 35.5H33.7" stroke="#c7a56a" stroke-width="2" stroke-linecap="round" />
-          <path d="M30.3 40.5H33.7" stroke="#c7a56a" stroke-width="2" stroke-linecap="round" />
-        </svg>
-        <div class="brand-text">Charleston Longevity Fitness</div>
+        <img class="brand-logo" src="Charleston Longevity Fitness logo design.png" alt="Charleston Longevity Fitness logo" />
       </div>
     </header>
 
@@ -464,6 +451,7 @@
           </p>
         </div>
         <div class="card">
+          <img class="coach-photo" src="Troy Beach headshot for website.jpeg" alt="Coach Troy Beach headshot" />
           <p>
             His coaching combines strength development, cardio progression, movement quality, and practical
             habit strategy to deliver better performance now while building a smarter path for long-term
