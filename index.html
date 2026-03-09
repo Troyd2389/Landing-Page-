@@ -37,19 +37,37 @@
       }
 
       header {
-        padding: 1.4rem 0;
+        padding: 1.2rem 0 0.6rem;
       }
 
       .brand {
-        font-size: 1.02rem;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        width: fit-content;
+        padding: 0.62rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(27, 40, 63, 0.12);
+        box-shadow: 0 10px 22px rgba(27, 40, 63, 0.08);
+      }
+
+      .brand-mark {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+      }
+
+      .brand-text {
+        font-size: 0.84rem;
         font-weight: 700;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.09em;
         text-transform: uppercase;
         color: var(--navy);
       }
 
       section {
-        padding: 1.6rem 0;
+        padding: 2rem 0;
       }
 
       .hero {
@@ -57,7 +75,7 @@
         grid-template-columns: 1.2fr 1fr;
         gap: 2rem;
         align-items: stretch;
-        padding: 2rem 0 2.6rem;
+        padding: 2.2rem 0 2.4rem;
       }
 
       .eyebrow {
@@ -218,37 +236,36 @@
         margin-top: 0.6rem;
       }
 
-      .about {
+      .bio {
         display: grid;
-        grid-template-columns: 1fr 1.1fr;
+        grid-template-columns: 1.05fr 1.25fr;
         gap: 1rem;
+        align-items: stretch;
       }
 
       .coach-badge {
         border-radius: 1rem;
-        padding: 1.2rem;
-        background: linear-gradient(145deg, #fff 0%, #f5f2ee 100%);
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow-soft);
+        padding: 1.35rem;
+        background: linear-gradient(145deg, #1f2d45 0%, #172336 100%);
+        border: 1px solid rgba(199, 165, 106, 0.32);
+        color: #e7eef8;
+        box-shadow: var(--shadow-strong);
       }
 
       .coach-badge strong {
-        color: var(--navy);
+        color: #f2dbad;
       }
 
-      .proof .card p {
+      .bio .card {
+        padding: 1.35rem;
+      }
+
+      .bio p {
         margin: 0;
       }
 
-      .quote {
-        font-size: 1.02rem;
-        color: var(--charcoal);
-      }
-
-      .author {
+      .bio p + p {
         margin-top: 0.9rem;
-        font-size: 0.92rem;
-        color: var(--muted);
       }
 
       .final-cta {
@@ -286,7 +303,7 @@
 
       @media (max-width: 920px) {
         .hero,
-        .about,
+        .bio,
         .grid {
           grid-template-columns: 1fr;
         }
@@ -304,7 +321,19 @@
   </head>
   <body>
     <header class="container">
-      <div class="brand">Charleston Longevity Fitness</div>
+      <div class="brand" aria-label="Charleston Longevity Fitness brand">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" stroke="#1b283f" stroke-width="2.5" />
+          <circle cx="32" cy="32" r="22" stroke="#c7a56a" stroke-width="2" />
+          <path d="M32 11L34.9 20.2H45L36.9 25.8L39.9 35L32 29.3L24.1 35L27.1 25.8L19 20.2H29.1L32 11Z" fill="#c7a56a" />
+          <path d="M25 48H39" stroke="#1b283f" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M27 48V25.6H37V48" stroke="#1b283f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M30.3 30.5H33.7" stroke="#c7a56a" stroke-width="2" stroke-linecap="round" />
+          <path d="M30.3 35.5H33.7" stroke="#c7a56a" stroke-width="2" stroke-linecap="round" />
+          <path d="M30.3 40.5H33.7" stroke="#c7a56a" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <div class="brand-text">Charleston Longevity Fitness</div>
+      </div>
     </header>
 
     <main class="container">
@@ -312,13 +341,12 @@
         <div>
           <span class="eyebrow">Longevity Performance Coaching</span>
           <h1 id="hero-heading">
-            Premium Strength, Cardio, and Longevity Coaching for Adults Who Want to Perform Better and
-            Age Stronger
+            Charleston’s Premium Longevity Coaching for Strength, Endurance, and High-Level Performance
           </h1>
           <p>
-            Charleston Longevity Fitness helps ambitious adults 40+ build strength, improve aerobic
-            capacity, and follow a smarter long-term health strategy with a $199 Longevity
-            Performance Assessment.
+            For adults who take their health and longevity seriously, Charleston Longevity Fitness delivers a private, strategic coaching
+            experience that improves strength, aerobic capacity, movement quality, and long-term healthspan—starting with a
+            $199 Longevity Performance Assessment.
           </p>
           <div class="hero-cta">
             <a class="cta-button" href="#book">Book Your $199 Longevity Assessment</a>
@@ -331,9 +359,9 @@
         <aside class="hero-card" aria-label="Assessment snapshot">
           <h2>Your premium assessment experience</h2>
           <ul>
-            <li>Comprehensive diagnostic baseline across strength, aerobic fitness, and movement</li>
-            <li>Strategic coaching insights built for high-performing adults balancing work and life</li>
-            <li>A focused performance and longevity roadmap with clear next-step priorities</li>
+            <li>Comprehensive baseline testing across strength, aerobic fitness, and movement quality</li>
+            <li>Elite-level coaching insights designed for high performers with demanding schedules</li>
+            <li>A precise performance and longevity roadmap with clear priorities and next steps</li>
           </ul>
         </aside>
       </section>
@@ -367,21 +395,21 @@
         </p>
         <div class="grid">
           <article class="card">
-            <h3>Executives & Business Owners 40+</h3>
+            <h3>Executives &amp; Business Owners 40+</h3>
             <p>
-              Preserve energy, focus, and physical capacity with efficient training strategies that fit your calendar.
+              Preserve energy, focus, and physical capacity with efficient coaching that fits your calendar.
             </p>
           </article>
           <article class="card">
             <h3>Former Athletes Rebuilding Their Edge</h3>
             <p>
-              Restore strength and aerobic engine with intelligent progressions that respect recovery and joint health.
+              Rebuild strength and aerobic capacity with intelligent progressions that respect recovery and joint health.
             </p>
           </article>
           <article class="card">
             <h3>Health-Focused Adults Seeking Elite Guidance</h3>
             <p>
-              Move beyond generic classes and get a premium, coach-led plan to protect your future performance.
+              Move beyond generic programming with private, coach-led strategy built to protect future performance.
             </p>
           </article>
         </div>
@@ -390,17 +418,17 @@
       <section class="assessment" aria-labelledby="assessment-heading">
         <h2 class="section-title" id="assessment-heading">What the assessment includes</h2>
         <p class="section-intro">
-          This is a premium diagnostic evaluation designed to uncover your current baseline and identify the highest-return priorities for your next 8-12 weeks.
+          This premium diagnostic session defines your baseline and identifies the highest-return priorities for your next 8-12 weeks.
         </p>
         <div class="grid">
           <article class="card">
-            <h3>Cardio & Aerobic Performance Evaluation</h3>
+            <h3>Cardio &amp; Aerobic Performance Evaluation</h3>
             <p>
               Analyze your aerobic capacity, recovery efficiency, and conditioning profile to build smarter endurance.
             </p>
           </article>
           <article class="card">
-            <h3>Strength, Movement & Structural Review</h3>
+            <h3>Strength, Movement &amp; Structural Review</h3>
             <p>
               Assess major strength patterns, movement quality, and key limitations impacting output and longevity.
             </p>
@@ -427,41 +455,29 @@
         </div>
       </section>
 
-      <section class="about" aria-labelledby="coach-heading">
+      <section class="bio" aria-labelledby="coach-heading">
         <div class="coach-badge">
-          <h2 class="section-title" id="coach-heading">About Charleston Longevity Fitness</h2>
+          <h2 class="section-title" id="coach-heading">Meet Troy</h2>
           <p>
-            <strong>Charleston Longevity Fitness is led by Troy</strong>, a coach focused on strength,
-            aerobic development, movement quality, and long-term performance for adults who want a
-            smarter approach to fitness and longevity.
+            <strong>Coach Troy specializes in helping adults 40+ build durable strength, improve aerobic capacity,
+            and move with confidence.</strong>
           </p>
         </div>
         <div class="card">
           <p>
-            The coaching model is high-touch, data-aware, and built around your real life. You’ll gain
-            clear priorities, expert accountability, and a premium training strategy designed to
-            compound results year after year.
+            His coaching combines strength development, cardio progression, movement quality, and practical
+            habit strategy to deliver better performance now while building a smarter path for long-term
+            health and longevity.
           </p>
-        </div>
-      </section>
-
-      <section class="proof" aria-labelledby="proof-heading">
-        <h2 class="section-title" id="proof-heading">Client results and experience</h2>
-        <div class="grid">
-          <article class="card">
-            <p class="quote">
-              “In 12 weeks, I improved my conditioning, regained strength, and finally had a clear
-              plan that fit my executive schedule. This is the most professional coaching I’ve had.”
-            </p>
-            <p class="author">— James R., 47 · Business Owner</p>
-          </article>
-          <article class="card">
-            <p class="quote">
-              “The assessment instantly showed what I needed to focus on. My energy, cardio fitness,
-              and confidence are higher than they’ve been in years.”
-            </p>
-            <p class="author">— Melissa T., 52 · Former Endurance Athlete</p>
-          </article>
+          <p>
+            Through close exposure to the longevity and age-management medical world via his wife Liz—a
+            registered nurse in functional and age-management care—Troy has developed a deeper view of
+            proactive aging, recovery, and healthspan optimization.
+          </p>
+          <p>
+            His mission is to help clients bridge fitness and longevity with a practical, personalized,
+            and sustainable plan built to last.
+          </p>
         </div>
       </section>
 
