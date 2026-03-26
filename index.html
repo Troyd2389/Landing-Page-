@@ -323,13 +323,44 @@
         color: #cad3df;
       }
 
-      .dashboard {
+      .portal {
         margin: 0.4rem 0 1.2rem;
         border: 1px solid var(--line);
         border-radius: 1.2rem;
         background: linear-gradient(180deg, #ffffff 0%, #f7f5f1 100%);
         padding: 1.5rem;
         box-shadow: var(--shadow-soft);
+      }
+
+      .portal-tabs {
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+
+      .portal-tab {
+        border: 1px solid #c8d1df;
+        background: #f2f5fa;
+        color: #1b283f;
+        border-radius: 999px;
+        padding: 0.55rem 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .portal-tab.active {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+      }
+
+      .portal-panel {
+        display: none;
+      }
+
+      .portal-panel.active {
+        display: block;
       }
 
       .dashboard-grid {
@@ -475,6 +506,25 @@
       .status-note {
         margin-top: 0.8rem;
         font-size: 0.9rem;
+      }
+
+      .login-group {
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .login-group input {
+        width: 100%;
+        border: 1px solid #cfd5de;
+        border-radius: 0.65rem;
+        padding: 0.6rem 0.65rem;
+        font: inherit;
+      }
+
+      .tiny-note {
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-top: 0.4rem;
       }
 
       @media (max-width: 920px) {
@@ -718,129 +768,197 @@
         </div>
       </section>
 
-      <section class="dashboard" aria-labelledby="dashboard-heading">
-        <h2 class="section-title" id="dashboard-heading">Client Dashboard Preview</h2>
-        <p class="section-intro">
-          A secure client portal concept where each client can log in, view their Relentless Score,
-          and track consistency with measurable progress data.
-        </p>
+    </main>
 
+    <section class="portal container" aria-labelledby="portal-heading">
+      <h2 class="section-title" id="portal-heading">Client Portal</h2>
+      <p class="section-intro">
+        The dashboard is now separated from the landing page flow. Use tabs for coach login or client login.
+      </p>
+
+      <div class="portal-tabs" role="tablist" aria-label="Portal tabs">
+        <button class="portal-tab active" data-panel="coach-panel" role="tab" aria-selected="true">Coach Login</button>
+        <button class="portal-tab" data-panel="client-panel" role="tab" aria-selected="false">Client Login</button>
+      </div>
+
+      <div class="portal-panel active" id="coach-panel" role="tabpanel">
         <div class="dashboard-grid">
           <article class="dashboard-card">
-            <h3>Coach Login + Client Session</h3>
-            <p>Use this prototype to simulate client logins and quickly update their score + weekly data.</p>
-            <form class="dashboard-form" id="session-form">
-              <label for="client-name">Client Name
-                <input id="client-name" name="clientName" type="text" placeholder="Example: Sarah M" required />
+            <h3>Coach Dashboard Access</h3>
+            <p>Log in as coach, then add or update client records from one central place.</p>
+            <form class="dashboard-form" id="coach-login-form">
+              <label for="coach-email">Coach Email
+                <input id="coach-email" name="coachEmail" type="email" placeholder="coach@relentless.com" required />
               </label>
-              <label for="client-email">Client Email
-                <input id="client-email" name="clientEmail" type="email" placeholder="sarah@email.com" required />
-              </label>
-              <label for="score-input">Relentless Score (0-100)
-                <input id="score-input" name="score" type="number" min="0" max="100" required />
-              </label>
-              <label for="sessions-input">Sessions Completed This Week
-                <input id="sessions-input" name="sessions" type="number" min="0" max="14" required />
-              </label>
-              <label for="habit-input">Nutrition / Recovery Habits Completed (% this week)
-                <input id="habit-input" name="habits" type="number" min="0" max="100" required />
+              <label for="coach-password">Password
+                <input id="coach-password" name="coachPassword" type="password" placeholder="Enter password" required />
               </label>
               <div class="button-row">
-                <button type="submit">Save Client Snapshot</button>
-                <button type="button" id="logout-btn" class="secondary">Log Out</button>
+                <button type="submit">Log In</button>
+                <button type="button" class="secondary" id="coach-logout-btn">Log Out</button>
               </div>
             </form>
-            <div class="status-note" id="status-note">No active client session yet.</div>
+            <div class="status-note" id="coach-status-note">Coach is logged out.</div>
+
+            <form class="dashboard-form" id="coach-client-form">
+              <label for="coach-client-name">Client Name
+                <input id="coach-client-name" name="clientName" type="text" placeholder="Example: Sarah M" required />
+              </label>
+              <label for="coach-client-email">Client Email
+                <input id="coach-client-email" name="clientEmail" type="email" placeholder="sarah@email.com" required />
+              </label>
+              <label for="coach-client-code">Client Access Code
+                <input id="coach-client-code" name="clientCode" type="text" placeholder="Example: RL-SARAH-01" required />
+              </label>
+              <label for="coach-score-input">Relentless Score (0-100)
+                <input id="coach-score-input" name="score" type="number" min="0" max="100" required />
+              </label>
+              <label for="coach-sessions-input">Sessions Completed This Week
+                <input id="coach-sessions-input" name="sessions" type="number" min="0" max="14" required />
+              </label>
+              <label for="coach-habit-input">Nutrition / Recovery Habits Completed (% this week)
+                <input id="coach-habit-input" name="habits" type="number" min="0" max="100" required />
+              </label>
+              <div class="button-row">
+                <button type="submit">Save Client Record</button>
+              </div>
+            </form>
           </article>
 
           <article class="dashboard-card">
-            <h3>Progress + Consistency Tracker</h3>
-            <p>See current score, streak visibility, and a table of most recent snapshots for fast coaching decisions.</p>
+            <h3>Coach Tracking View</h3>
+            <p>All client updates are visible here, including check-ins submitted from the client dashboard.</p>
 
             <div class="dashboard-metrics">
               <div class="metric">
-                <strong id="metric-score">--</strong>
-                <span>Current Relentless Score</span>
+                <strong id="coach-metric-total">0</strong>
+                <span>Total Active Clients</span>
               </div>
               <div class="metric">
-                <strong id="metric-sessions">--</strong>
-                <span>Sessions this Week</span>
+                <strong id="coach-metric-avg-score">0</strong>
+                <span>Average Score</span>
               </div>
               <div class="metric">
-                <strong id="metric-habits">--</strong>
-                <span>Habit Completion</span>
+                <strong id="coach-metric-avg-habits">0%</strong>
+                <span>Average Habit Completion</span>
               </div>
             </div>
 
-            <div class="consistency-bars">
-              <div class="bar-row">
-                <span>Training</span>
-                <div class="bar-track"><div class="bar-fill" id="training-fill" style="width: 0%"></div></div>
-                <span id="training-label">0%</span>
-              </div>
-              <div class="bar-row">
-                <span>Habits</span>
-                <div class="bar-track"><div class="bar-fill" id="habits-fill" style="width: 0%"></div></div>
-                <span id="habits-label">0%</span>
-              </div>
-              <div class="bar-row">
-                <span>Progress</span>
-                <div class="bar-track"><div class="bar-fill" id="progress-fill" style="width: 0%"></div></div>
-                <span id="progress-label">0%</span>
-              </div>
-            </div>
-
-            <table aria-label="Recent client snapshots">
+            <table aria-label="Coach client table">
               <thead>
                 <tr>
-                  <th>Date</th>
                   <th>Client</th>
+                  <th>Email</th>
                   <th>Score</th>
                   <th>Sessions</th>
                   <th>Habits</th>
+                  <th>Updated</th>
                 </tr>
               </thead>
-              <tbody id="snapshot-table-body">
-                <tr>
-                  <td colspan="5">No snapshots saved yet.</td>
-                </tr>
+              <tbody id="coach-table-body">
+                <tr><td colspan="6">No client records yet.</td></tr>
               </tbody>
             </table>
           </article>
         </div>
-      </section>
-    </main>
+      </div>
+
+      <div class="portal-panel" id="client-panel" role="tabpanel">
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <h3>Client Login</h3>
+            <p>Each client logs into their own dashboard using email + access code.</p>
+            <form class="dashboard-form" id="client-login-form">
+              <div class="login-group">
+                <label for="client-login-email">Client Email</label>
+                <input id="client-login-email" name="clientEmail" type="email" required />
+              </div>
+              <div class="login-group">
+                <label for="client-login-code">Access Code</label>
+                <input id="client-login-code" name="clientCode" type="text" required />
+              </div>
+              <div class="button-row">
+                <button type="submit">Log In to Dashboard</button>
+                <button type="button" class="secondary" id="client-logout-btn">Log Out</button>
+              </div>
+            </form>
+            <div class="status-note" id="client-status-note">Client is logged out.</div>
+            <p class="tiny-note">Coach creates each client’s access code in the coach dashboard.</p>
+          </article>
+
+          <article class="dashboard-card">
+            <h3>Individual Client Dashboard</h3>
+            <p>Clients can see their current metrics and submit a weekly update.</p>
+            <div class="dashboard-metrics">
+              <div class="metric">
+                <strong id="client-metric-score">--</strong>
+                <span>Relentless Score</span>
+              </div>
+              <div class="metric">
+                <strong id="client-metric-sessions">--</strong>
+                <span>Sessions this Week</span>
+              </div>
+              <div class="metric">
+                <strong id="client-metric-habits">--</strong>
+                <span>Habit Completion</span>
+              </div>
+            </div>
+
+            <form class="dashboard-form" id="client-checkin-form">
+              <label for="client-checkin-sessions">Update Sessions This Week
+                <input id="client-checkin-sessions" name="sessions" type="number" min="0" max="14" required />
+              </label>
+              <label for="client-checkin-habits">Update Habit Completion (%)
+                <input id="client-checkin-habits" name="habits" type="number" min="0" max="100" required />
+              </label>
+              <div class="button-row">
+                <button type="submit">Submit Weekly Check-In</button>
+              </div>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <script>
-      const sessionForm = document.getElementById("session-form");
-      const statusNote = document.getElementById("status-note");
-      const logoutBtn = document.getElementById("logout-btn");
-      const snapshotTableBody = document.getElementById("snapshot-table-body");
-      const metricScore = document.getElementById("metric-score");
-      const metricSessions = document.getElementById("metric-sessions");
-      const metricHabits = document.getElementById("metric-habits");
-      const trainingFill = document.getElementById("training-fill");
-      const habitsFill = document.getElementById("habits-fill");
-      const progressFill = document.getElementById("progress-fill");
-      const trainingLabel = document.getElementById("training-label");
-      const habitsLabel = document.getElementById("habits-label");
-      const progressLabel = document.getElementById("progress-label");
+      const portalTabs = Array.from(document.querySelectorAll(".portal-tab"));
+      const portalPanels = Array.from(document.querySelectorAll(".portal-panel"));
 
-      const STORAGE_KEY = "relentlessClientSnapshots";
+      const coachLoginForm = document.getElementById("coach-login-form");
+      const coachClientForm = document.getElementById("coach-client-form");
+      const coachLogoutBtn = document.getElementById("coach-logout-btn");
+      const coachStatusNote = document.getElementById("coach-status-note");
+      const coachTableBody = document.getElementById("coach-table-body");
+      const coachMetricTotal = document.getElementById("coach-metric-total");
+      const coachMetricAvgScore = document.getElementById("coach-metric-avg-score");
+      const coachMetricAvgHabits = document.getElementById("coach-metric-avg-habits");
 
-      function loadSnapshots() {
+      const clientLoginForm = document.getElementById("client-login-form");
+      const clientLogoutBtn = document.getElementById("client-logout-btn");
+      const clientCheckinForm = document.getElementById("client-checkin-form");
+      const clientStatusNote = document.getElementById("client-status-note");
+      const clientMetricScore = document.getElementById("client-metric-score");
+      const clientMetricSessions = document.getElementById("client-metric-sessions");
+      const clientMetricHabits = document.getElementById("client-metric-habits");
+
+      const STORAGE_KEY = "relentlessClientRecords";
+
+      let coachLoggedIn = false;
+      let activeClientEmail = null;
+
+      function loadRecords() {
         const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return [];
+        if (!raw) return {};
         try {
           const parsed = JSON.parse(raw);
-          return Array.isArray(parsed) ? parsed : [];
+          return parsed && typeof parsed === "object" ? parsed : {};
         } catch {
-          return [];
+          return {};
         }
       }
 
-      function saveSnapshots(snapshots) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshots));
+      function saveRecords(records) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
       }
 
       function formatDate(dateString) {
@@ -851,97 +969,170 @@
         });
       }
 
-      function renderTable(snapshots) {
-        if (!snapshots.length) {
-          snapshotTableBody.innerHTML = '<tr><td colspan="5">No snapshots saved yet.</td></tr>';
+      function setActivePanel(panelId) {
+        portalTabs.forEach((tab) => {
+          const isActive = tab.dataset.panel === panelId;
+          tab.classList.toggle("active", isActive);
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        portalPanels.forEach((panel) => {
+          panel.classList.toggle("active", panel.id === panelId);
+        });
+      }
+
+      function renderCoachTable(records) {
+        const clients = Object.values(records).sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+        if (!clients.length) {
+          coachTableBody.innerHTML = '<tr><td colspan="6">No client records yet.</td></tr>';
+          coachMetricTotal.textContent = "0";
+          coachMetricAvgScore.textContent = "0";
+          coachMetricAvgHabits.textContent = "0%";
           return;
         }
 
-        snapshotTableBody.innerHTML = snapshots
-          .slice(0, 8)
+        const totalScore = clients.reduce((sum, client) => sum + client.score, 0);
+        const totalHabits = clients.reduce((sum, client) => sum + client.habits, 0);
+
+        coachMetricTotal.textContent = String(clients.length);
+        coachMetricAvgScore.textContent = String(Math.round(totalScore / clients.length));
+        coachMetricAvgHabits.textContent = `${Math.round(totalHabits / clients.length)}%`;
+
+        coachTableBody.innerHTML = clients
           .map(
-            (snapshot) =>
+            (client) =>
               `<tr>
-                <td>${formatDate(snapshot.createdAt)}</td>
-                <td>${snapshot.clientName}</td>
-                <td>${snapshot.score}</td>
-                <td>${snapshot.sessions}</td>
-                <td>${snapshot.habits}%</td>
+                <td>${client.name}</td>
+                <td>${client.email}</td>
+                <td>${client.score}</td>
+                <td>${client.sessions}</td>
+                <td>${client.habits}%</td>
+                <td>${formatDate(client.updatedAt)}</td>
               </tr>`
           )
           .join("");
       }
 
-      function updateDashboard(snapshot) {
-        const sessionsPercent = Math.min(100, Math.round((snapshot.sessions / 5) * 100));
-        const habitsPercent = Math.min(100, snapshot.habits);
-        const progressPercent = Math.round(snapshot.score);
-
-        metricScore.textContent = snapshot.score;
-        metricSessions.textContent = snapshot.sessions;
-        metricHabits.textContent = `${snapshot.habits}%`;
-
-        trainingFill.style.width = `${sessionsPercent}%`;
-        habitsFill.style.width = `${habitsPercent}%`;
-        progressFill.style.width = `${progressPercent}%`;
-
-        trainingLabel.textContent = `${sessionsPercent}%`;
-        habitsLabel.textContent = `${habitsPercent}%`;
-        progressLabel.textContent = `${progressPercent}%`;
-
-        statusNote.textContent = `Active session: ${snapshot.clientName} (${snapshot.clientEmail}) — last updated ${formatDate(
-          snapshot.createdAt
-        )}.`;
+      function renderClientDashboard(client) {
+        if (!client) {
+          clientMetricScore.textContent = "--";
+          clientMetricSessions.textContent = "--";
+          clientMetricHabits.textContent = "--";
+          return;
+        }
+        clientMetricScore.textContent = String(client.score);
+        clientMetricSessions.textContent = String(client.sessions);
+        clientMetricHabits.textContent = `${client.habits}%`;
       }
 
-      function resetDashboard() {
-        metricScore.textContent = "--";
-        metricSessions.textContent = "--";
-        metricHabits.textContent = "--";
-        [trainingFill, habitsFill, progressFill].forEach((el) => {
-          el.style.width = "0%";
-        });
-        [trainingLabel, habitsLabel, progressLabel].forEach((el) => {
-          el.textContent = "0%";
-        });
-        statusNote.textContent = "No active client session yet.";
-      }
+      portalTabs.forEach((tab) => {
+        tab.addEventListener("click", () => setActivePanel(tab.dataset.panel));
+      });
 
-      sessionForm.addEventListener("submit", (event) => {
+      coachLoginForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        const formData = new FormData(sessionForm);
+        const formData = new FormData(coachLoginForm);
+        const email = formData.get("coachEmail").toString().trim();
+        const password = formData.get("coachPassword").toString().trim();
 
-        const snapshot = {
-          clientName: formData.get("clientName").toString().trim(),
-          clientEmail: formData.get("clientEmail").toString().trim(),
-          score: Number(formData.get("score")),
-          sessions: Number(formData.get("sessions")),
-          habits: Number(formData.get("habits")),
-          createdAt: new Date().toISOString()
-        };
+        if (email === "coach@relentless.com" && password === "relentless123") {
+          coachLoggedIn = true;
+          coachStatusNote.textContent = "Coach logged in. You can now manage all client dashboards.";
+        } else {
+          coachStatusNote.textContent = "Invalid coach credentials. Use the configured coach login.";
+        }
+      });
 
-        if (!snapshot.clientName || !snapshot.clientEmail) {
-          statusNote.textContent = "Please enter a valid client name and email.";
+      coachLogoutBtn.addEventListener("click", () => {
+        coachLoggedIn = false;
+        coachStatusNote.textContent = "Coach is logged out.";
+      });
+
+      coachClientForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!coachLoggedIn) {
+          coachStatusNote.textContent = "Please log in as coach before saving client records.";
           return;
         }
 
-        const snapshots = loadSnapshots();
-        snapshots.unshift(snapshot);
-        saveSnapshots(snapshots);
-        updateDashboard(snapshot);
-        renderTable(snapshots);
-        sessionForm.reset();
+        const formData = new FormData(coachClientForm);
+        const name = formData.get("clientName").toString().trim();
+        const email = formData.get("clientEmail").toString().trim().toLowerCase();
+        const code = formData.get("clientCode").toString().trim();
+        const score = Number(formData.get("score"));
+        const sessions = Number(formData.get("sessions"));
+        const habits = Number(formData.get("habits"));
+
+        if (!name || !email || !code) {
+          coachStatusNote.textContent = "Client name, email, and access code are required.";
+          return;
+        }
+
+        const records = loadRecords();
+        records[email] = { name, email, accessCode: code, score, sessions, habits, updatedAt: new Date().toISOString() };
+        saveRecords(records);
+        renderCoachTable(records);
+        coachStatusNote.textContent = `Saved dashboard data for ${name}.`;
+        coachClientForm.reset();
       });
 
-      logoutBtn.addEventListener("click", () => {
-        resetDashboard();
+      clientLoginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(clientLoginForm);
+        const email = formData.get("clientEmail").toString().trim().toLowerCase();
+        const code = formData.get("clientCode").toString().trim();
+        const records = loadRecords();
+        const client = records[email];
+
+        if (!client || client.accessCode !== code) {
+          clientStatusNote.textContent = "Login failed. Check your email or access code.";
+          activeClientEmail = null;
+          renderClientDashboard(null);
+          return;
+        }
+
+        activeClientEmail = email;
+        renderClientDashboard(client);
+        clientStatusNote.textContent = `${client.name} logged in. Last update: ${formatDate(client.updatedAt)}.`;
       });
 
-      const existingSnapshots = loadSnapshots();
-      renderTable(existingSnapshots);
-      if (existingSnapshots.length) {
-        updateDashboard(existingSnapshots[0]);
-      }
+      clientLogoutBtn.addEventListener("click", () => {
+        activeClientEmail = null;
+        renderClientDashboard(null);
+        clientStatusNote.textContent = "Client is logged out.";
+      });
+
+      clientCheckinForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!activeClientEmail) {
+          clientStatusNote.textContent = "Please log in before submitting a check-in.";
+          return;
+        }
+
+        const formData = new FormData(clientCheckinForm);
+        const sessions = Number(formData.get("sessions"));
+        const habits = Number(formData.get("habits"));
+        const records = loadRecords();
+        const client = records[activeClientEmail];
+
+        if (!client) {
+          clientStatusNote.textContent = "Client record not found. Please log in again.";
+          activeClientEmail = null;
+          renderClientDashboard(null);
+          return;
+        }
+
+        client.sessions = sessions;
+        client.habits = habits;
+        client.updatedAt = new Date().toISOString();
+        records[activeClientEmail] = client;
+        saveRecords(records);
+        renderClientDashboard(client);
+        renderCoachTable(records);
+        clientStatusNote.textContent = "Weekly check-in submitted. Coach dashboard is now updated.";
+        clientCheckinForm.reset();
+      });
+
+      renderCoachTable(loadRecords());
     </script>
   </body>
 </html>
