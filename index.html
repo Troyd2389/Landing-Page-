@@ -323,6 +323,160 @@
         color: #cad3df;
       }
 
+      .dashboard {
+        margin: 0.4rem 0 1.2rem;
+        border: 1px solid var(--line);
+        border-radius: 1.2rem;
+        background: linear-gradient(180deg, #ffffff 0%, #f7f5f1 100%);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 1rem;
+      }
+
+      .dashboard-card {
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        padding: 1rem;
+        background: #fff;
+      }
+
+      .dashboard-card h3 {
+        margin: 0 0 0.7rem;
+        color: var(--navy);
+      }
+
+      .dashboard-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .dashboard-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+        margin-top: 0.9rem;
+      }
+
+      .dashboard-form label {
+        font-size: 0.85rem;
+        color: var(--charcoal);
+        font-weight: 600;
+      }
+
+      .dashboard-form input,
+      .dashboard-form select {
+        margin-top: 0.3rem;
+        width: 100%;
+        border: 1px solid #cfd5de;
+        border-radius: 0.65rem;
+        padding: 0.6rem 0.65rem;
+        font: inherit;
+      }
+
+      .button-row {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+
+      .button-row button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.58rem 0.95rem;
+        font-weight: 700;
+        background: var(--navy);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .button-row button.secondary {
+        background: #d8dde6;
+        color: #1c2738;
+      }
+
+      .dashboard-metrics {
+        margin-top: 0.8rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+      }
+
+      .metric {
+        padding: 0.75rem;
+        border-radius: 0.8rem;
+        background: #f7f9fc;
+        border: 1px solid #dbe2ec;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.25rem;
+        color: var(--navy);
+      }
+
+      .metric span {
+        font-size: 0.83rem;
+        color: var(--muted);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.85rem;
+        font-size: 0.93rem;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e6eaf0;
+      }
+
+      th {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #556173;
+      }
+
+      .consistency-bars {
+        margin-top: 0.9rem;
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 85px 1fr 54px;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .bar-track {
+        width: 100%;
+        height: 10px;
+        border-radius: 999px;
+        background: #e4e8ef;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #3465a4 0%, #4f81bf 100%);
+      }
+
+      .status-note {
+        margin-top: 0.8rem;
+        font-size: 0.9rem;
+      }
+
       @media (max-width: 920px) {
         .hero,
         .bio,
@@ -333,6 +487,11 @@
         .hero {
           padding-top: 1.3rem;
           gap: 1.2rem;
+        }
+
+        .dashboard-grid,
+        .dashboard-metrics {
+          grid-template-columns: 1fr;
         }
 
         .section-title {
@@ -558,6 +717,231 @@
           Limited assessment slots are released each month to maintain a high-touch coaching experience.
         </div>
       </section>
+
+      <section class="dashboard" aria-labelledby="dashboard-heading">
+        <h2 class="section-title" id="dashboard-heading">Client Dashboard Preview</h2>
+        <p class="section-intro">
+          A secure client portal concept where each client can log in, view their Relentless Score,
+          and track consistency with measurable progress data.
+        </p>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <h3>Coach Login + Client Session</h3>
+            <p>Use this prototype to simulate client logins and quickly update their score + weekly data.</p>
+            <form class="dashboard-form" id="session-form">
+              <label for="client-name">Client Name
+                <input id="client-name" name="clientName" type="text" placeholder="Example: Sarah M" required />
+              </label>
+              <label for="client-email">Client Email
+                <input id="client-email" name="clientEmail" type="email" placeholder="sarah@email.com" required />
+              </label>
+              <label for="score-input">Relentless Score (0-100)
+                <input id="score-input" name="score" type="number" min="0" max="100" required />
+              </label>
+              <label for="sessions-input">Sessions Completed This Week
+                <input id="sessions-input" name="sessions" type="number" min="0" max="14" required />
+              </label>
+              <label for="habit-input">Nutrition / Recovery Habits Completed (% this week)
+                <input id="habit-input" name="habits" type="number" min="0" max="100" required />
+              </label>
+              <div class="button-row">
+                <button type="submit">Save Client Snapshot</button>
+                <button type="button" id="logout-btn" class="secondary">Log Out</button>
+              </div>
+            </form>
+            <div class="status-note" id="status-note">No active client session yet.</div>
+          </article>
+
+          <article class="dashboard-card">
+            <h3>Progress + Consistency Tracker</h3>
+            <p>See current score, streak visibility, and a table of most recent snapshots for fast coaching decisions.</p>
+
+            <div class="dashboard-metrics">
+              <div class="metric">
+                <strong id="metric-score">--</strong>
+                <span>Current Relentless Score</span>
+              </div>
+              <div class="metric">
+                <strong id="metric-sessions">--</strong>
+                <span>Sessions this Week</span>
+              </div>
+              <div class="metric">
+                <strong id="metric-habits">--</strong>
+                <span>Habit Completion</span>
+              </div>
+            </div>
+
+            <div class="consistency-bars">
+              <div class="bar-row">
+                <span>Training</span>
+                <div class="bar-track"><div class="bar-fill" id="training-fill" style="width: 0%"></div></div>
+                <span id="training-label">0%</span>
+              </div>
+              <div class="bar-row">
+                <span>Habits</span>
+                <div class="bar-track"><div class="bar-fill" id="habits-fill" style="width: 0%"></div></div>
+                <span id="habits-label">0%</span>
+              </div>
+              <div class="bar-row">
+                <span>Progress</span>
+                <div class="bar-track"><div class="bar-fill" id="progress-fill" style="width: 0%"></div></div>
+                <span id="progress-label">0%</span>
+              </div>
+            </div>
+
+            <table aria-label="Recent client snapshots">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Client</th>
+                  <th>Score</th>
+                  <th>Sessions</th>
+                  <th>Habits</th>
+                </tr>
+              </thead>
+              <tbody id="snapshot-table-body">
+                <tr>
+                  <td colspan="5">No snapshots saved yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </section>
     </main>
+
+    <script>
+      const sessionForm = document.getElementById("session-form");
+      const statusNote = document.getElementById("status-note");
+      const logoutBtn = document.getElementById("logout-btn");
+      const snapshotTableBody = document.getElementById("snapshot-table-body");
+      const metricScore = document.getElementById("metric-score");
+      const metricSessions = document.getElementById("metric-sessions");
+      const metricHabits = document.getElementById("metric-habits");
+      const trainingFill = document.getElementById("training-fill");
+      const habitsFill = document.getElementById("habits-fill");
+      const progressFill = document.getElementById("progress-fill");
+      const trainingLabel = document.getElementById("training-label");
+      const habitsLabel = document.getElementById("habits-label");
+      const progressLabel = document.getElementById("progress-label");
+
+      const STORAGE_KEY = "relentlessClientSnapshots";
+
+      function loadSnapshots() {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return [];
+        try {
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function saveSnapshots(snapshots) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshots));
+      }
+
+      function formatDate(dateString) {
+        return new Date(dateString).toLocaleDateString(undefined, {
+          month: "short",
+          day: "numeric",
+          year: "numeric"
+        });
+      }
+
+      function renderTable(snapshots) {
+        if (!snapshots.length) {
+          snapshotTableBody.innerHTML = '<tr><td colspan="5">No snapshots saved yet.</td></tr>';
+          return;
+        }
+
+        snapshotTableBody.innerHTML = snapshots
+          .slice(0, 8)
+          .map(
+            (snapshot) =>
+              `<tr>
+                <td>${formatDate(snapshot.createdAt)}</td>
+                <td>${snapshot.clientName}</td>
+                <td>${snapshot.score}</td>
+                <td>${snapshot.sessions}</td>
+                <td>${snapshot.habits}%</td>
+              </tr>`
+          )
+          .join("");
+      }
+
+      function updateDashboard(snapshot) {
+        const sessionsPercent = Math.min(100, Math.round((snapshot.sessions / 5) * 100));
+        const habitsPercent = Math.min(100, snapshot.habits);
+        const progressPercent = Math.round(snapshot.score);
+
+        metricScore.textContent = snapshot.score;
+        metricSessions.textContent = snapshot.sessions;
+        metricHabits.textContent = `${snapshot.habits}%`;
+
+        trainingFill.style.width = `${sessionsPercent}%`;
+        habitsFill.style.width = `${habitsPercent}%`;
+        progressFill.style.width = `${progressPercent}%`;
+
+        trainingLabel.textContent = `${sessionsPercent}%`;
+        habitsLabel.textContent = `${habitsPercent}%`;
+        progressLabel.textContent = `${progressPercent}%`;
+
+        statusNote.textContent = `Active session: ${snapshot.clientName} (${snapshot.clientEmail}) — last updated ${formatDate(
+          snapshot.createdAt
+        )}.`;
+      }
+
+      function resetDashboard() {
+        metricScore.textContent = "--";
+        metricSessions.textContent = "--";
+        metricHabits.textContent = "--";
+        [trainingFill, habitsFill, progressFill].forEach((el) => {
+          el.style.width = "0%";
+        });
+        [trainingLabel, habitsLabel, progressLabel].forEach((el) => {
+          el.textContent = "0%";
+        });
+        statusNote.textContent = "No active client session yet.";
+      }
+
+      sessionForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(sessionForm);
+
+        const snapshot = {
+          clientName: formData.get("clientName").toString().trim(),
+          clientEmail: formData.get("clientEmail").toString().trim(),
+          score: Number(formData.get("score")),
+          sessions: Number(formData.get("sessions")),
+          habits: Number(formData.get("habits")),
+          createdAt: new Date().toISOString()
+        };
+
+        if (!snapshot.clientName || !snapshot.clientEmail) {
+          statusNote.textContent = "Please enter a valid client name and email.";
+          return;
+        }
+
+        const snapshots = loadSnapshots();
+        snapshots.unshift(snapshot);
+        saveSnapshots(snapshots);
+        updateDashboard(snapshot);
+        renderTable(snapshots);
+        sessionForm.reset();
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        resetDashboard();
+      });
+
+      const existingSnapshots = loadSnapshots();
+      renderTable(existingSnapshots);
+      if (existingSnapshots.length) {
+        updateDashboard(existingSnapshots[0]);
+      }
+    </script>
   </body>
 </html>
