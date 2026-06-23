@@ -51,7 +51,16 @@
 
       header { padding: 1.35rem 0 0; }
 
-      .brand { display: inline-flex; flex-direction: column; gap: 0.14rem; }
+      .brand { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.28rem; }
+
+      .brand-logo {
+        width: clamp(7.5rem, 16vw, 10.5rem);
+        height: clamp(3.2rem, 7vw, 4.5rem);
+        object-fit: contain;
+        object-position: left center;
+        display: block;
+        filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.38));
+      }
 
       .wordmark-main {
         margin: 0;
@@ -178,24 +187,84 @@
         display: block;
       }
 
-      .final-cta { text-align: center; padding-bottom: 4rem; }
+      .final-cta { text-align: center; }
       .final-cta .section-copy { margin: 0 auto; }
       .final-cta .cta-row { justify-content: center; }
+
+      .form-section { padding-top: 0; padding-bottom: 4rem; }
+
+      .lead-form-wrap {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .lead-form {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1.6rem;
+        text-align: left;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .field { display: grid; gap: 0.42rem; }
+
+      .field.full { grid-column: 1 / -1; }
+
+      label {
+        color: var(--off-white);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      input, select, textarea {
+        width: 100%;
+        border: 1px solid rgba(95, 127, 77, 0.34);
+        border-radius: 0.9rem;
+        background: rgba(7, 9, 8, 0.78);
+        color: var(--off-white);
+        font: inherit;
+        min-height: 3.1rem;
+        padding: 0.85rem 0.95rem;
+        outline: none;
+        transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      }
+
+      textarea { min-height: 8rem; resize: vertical; }
+
+      input::placeholder, textarea::placeholder { color: rgba(213, 216, 207, 0.52); }
+
+      input:focus, select:focus, textarea:focus {
+        border-color: rgba(143, 176, 112, 0.9);
+        background: rgba(10, 13, 11, 0.96);
+        box-shadow: 0 0 0 4px rgba(95, 127, 77, 0.18), 0 0 34px rgba(95, 127, 77, 0.12);
+      }
+
+      .form-note { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
       @media (max-width: 820px) {
         .container { width: min(100% - 28px, 1120px); }
         header { padding-top: 1rem; }
         .hero { min-height: auto; padding: 4rem 0 3.25rem; }
         .cards, .story-grid { grid-template-columns: 1fr; }
+        .brand { align-items: center; text-align: center; }
+        .brand-logo { object-position: center; }
         .story-photo { aspect-ratio: 16 / 12; }
         .cta-button { width: 100%; }
+        .form-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
     <header class="container">
       <div class="brand" aria-label="Relentless brand">
-        <p class="wordmark-main">RELENTLESS</p>
+        <img class="brand-logo" src="IMG_3581.jpeg" alt="Relentless" />
         <p class="wordmark-sub">Stronger Every Day</p>
       </div>
     </header>
@@ -208,8 +277,8 @@
           <p class="lead">Relentless is building a smarter way to understand, improve, and preserve your physical capabilities through objective assessments, intelligent software, AI tools, and real human coaching.</p>
           <p class="supporting">Most people train without truly knowing where they stand. Relentless is designed to change that.</p>
           <div class="cta-row" aria-label="Early access calls to action">
-            <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfT060NodNgAW9cmPhtL03xM8qrzygORKXPoibqeLG7lF7E1w/viewform" target="_blank" rel="noopener noreferrer">Get Early Access</a>
-            <a class="cta-button secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSfT060NodNgAW9cmPhtL03xM8qrzygORKXPoibqeLG7lF7E1w/viewform" target="_blank" rel="noopener noreferrer">Apply for a Relentless Assessment</a>
+            <a class="cta-button" href="#early-access-form">Get Early Access</a>
+            <a class="cta-button secondary" href="#early-access-form">Apply for a Relentless Assessment</a>
           </div>
           <p class="microcopy">Follow the build. Get updates. Be first in line as Relentless grows.</p>
         </div>
@@ -272,10 +341,48 @@
             <h2 class="section-title" id="final-heading">Follow the Relentless Journey</h2>
             <p class="section-copy">Relentless is currently being built and tested. Join the early-access list to follow the process, receive updates, and be first in line as new features, assessments, and coaching options open.</p>
             <div class="cta-row" aria-label="Final calls to action">
-              <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfT060NodNgAW9cmPhtL03xM8qrzygORKXPoibqeLG7lF7E1w/viewform" target="_blank" rel="noopener noreferrer">Get Early Access</a>
-              <a class="cta-button secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSfT060NodNgAW9cmPhtL03xM8qrzygORKXPoibqeLG7lF7E1w/viewform" target="_blank" rel="noopener noreferrer">Apply for a Relentless Assessment</a>
+              <a class="cta-button" href="#early-access-form">Get Early Access</a>
+              <a class="cta-button secondary" href="#early-access-form">Apply for a Relentless Assessment</a>
             </div>
             <p class="microcopy">The assessment option is for people who want personal guidance now while the Relentless platform is being built.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section container" id="early-access-form" aria-labelledby="form-heading">
+        <div class="panel lead-form-wrap">
+          <div class="panel-inner">
+            <h2 class="section-title" id="form-heading">Join the Relentless Early Access List</h2>
+            <p class="section-copy">Get updates as Relentless is built, tested, and opened to early users. You can also let us know if you are interested in a Relentless Assessment.</p>
+            <form class="lead-form" method="POST" action="https://formspree.io/f/xgojegzy">
+              <input type="hidden" name="_subject" value="New Relentless Early Access Lead" />
+              <div class="form-grid">
+                <div class="field">
+                  <label for="first-name">First Name</label>
+                  <input id="first-name" type="text" name="first_name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" name="email" required />
+                </div>
+                <div class="field full">
+                  <label for="interest">Interest</label>
+                  <select id="interest" name="interest" required>
+                    <option value="" disabled selected>Select your interest</option>
+                    <option>Get Early Access</option>
+                    <option>Relentless Assessment</option>
+                    <option>Coaching Updates</option>
+                    <option>Just Following Along</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="message">Optional Message</label>
+                  <textarea id="message" name="message" placeholder="Anything you want us to know?"></textarea>
+                </div>
+              </div>
+              <button class="cta-button" type="submit">Join Early Access</button>
+              <p class="form-note">We’ll only use this to send Relentless updates and follow up if you request assessment information.</p>
+            </form>
           </div>
         </div>
       </section>
