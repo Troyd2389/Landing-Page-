@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Received | Relentless Run • Ruck • Ride</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070908;
+      --off-white: #ebece6;
+      --soft-white: #d5d8cf;
+      --muted: #9ea597;
+      --green-bright: #5f7f4d;
+      --line: rgba(95,127,77,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      color: var(--soft-white);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(47,74,50,.42), transparent 28rem),
+        linear-gradient(180deg, #070908, #0d100e 55%, #070908);
+      font-family: Inter, system-ui, sans-serif;
+    }
+    .card {
+      width: min(720px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 1.4rem;
+      padding: clamp(1.6rem, 5vw, 3.2rem);
+      background: rgba(16,20,17,.9);
+      box-shadow: 0 30px 90px rgba(0,0,0,.5);
+      text-align: center;
+    }
+    .kicker {
+      color: var(--green-bright);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: .55rem 0 1rem;
+      color: var(--off-white);
+      font: 900 clamp(3rem, 8vw, 5.8rem)/.9 "Barlow Condensed", Impact, sans-serif;
+      text-transform: uppercase;
+    }
+    p { margin: .8rem auto 0; max-width: 590px; line-height: 1.6; }
+    .muted { color: var(--muted); }
+    .actions {
+      margin-top: 1.6rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+    a {
+      display: inline-flex;
+      min-height: 3rem;
+      align-items: center;
+      justify-content: center;
+      padding: .8rem 1.2rem;
+      border: 1px solid rgba(95,127,77,.72);
+      border-radius: 999px;
+      color: #f3f5ef;
+      background: linear-gradient(135deg, #35583a, #223c26 55%, #152818);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    a.secondary { background: rgba(7,9,8,.55); }
+    .logo { width: 112px; height: 112px; object-fit: contain; margin: 0 auto 1rem; display: block; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="" alt="Relentless — Stronger Every Day" />
+    <span class="kicker">Relentless Run • Ruck • Ride</span>
+    <h1>Registration received.</h1>
+    <p id="confirmation-message">Your information has been submitted.</p>
+    <p class="muted">Saturday, August 29, 2026 · 8:00 a.m. · Daniel Island Fitness</p>
+    <div class="actions">
+      <a href="./">Review Event Details</a>
+      <a class="secondary" href="../">Explore Relentless</a>
+    </div>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const message = document.getElementById("confirmation-message");
+
+    if (type === "included") {
+      message.textContent = "Your included client registration has been received. We’ll verify your Relentless or Daniel Island Fitness client status and send the Ride with GPS navigation link and final event instructions before August 29.";
+    } else {
+      message.textContent = "Your registration information has been received. Your spot is confirmed after the $10 payment is completed. The Ride with GPS navigation link and final event instructions will be emailed before August 29.";
+    }
+  </script>
+  <script src="logo.js"></script>
+</body>
+</html>
