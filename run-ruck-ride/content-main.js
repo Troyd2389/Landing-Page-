@@ -55,7 +55,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
         </article>
         <article class="discipline" data-step="2">
           <h3>Ruck</h3><span class="distance">1 mile · Self-selected load</span>
-          <p>Carry a secure backpack or ruck for one mile. There is no required minimum weight for the founding event.</p>
+          <p>Carry weight in a secure backpack, purpose-built ruck, or weighted vest for one mile. There is no required minimum weight for the founding event.</p>
           <p><strong>Suggested load:</strong> About 5–10% of body weight for newer participants, 10–15% for experienced ruckers, and up to 20% only if you already train safely with that load.</p>
         </article>
         <article class="discipline" data-step="3">
@@ -80,7 +80,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
             <li>Slow down at crossings, blind turns, narrow sections, and congested areas.</li>
             <li>Pass only when there is ample room and clearly announce, “Passing on your left.”</li>
             <li>No drafting, racing, aggressive passing, or headphones during the ride.</li>
-            <li>Use the official Ride with GPS route, stay alert for navigation cues, and obey all traffic controls.</li>
+            <li>Use the official route, stay alert for navigation cues, and obey all traffic controls.</li>
             <li>Unsafe riding may result in removal from the event.</li>
           </ul>
         </div>
@@ -89,7 +89,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
             <p class="section-kicker">What to Bring</p>
             <h2 style="margin:0;color:var(--off-white);font:900 2.6rem/0.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">Arrive ready.</h2>
             <ul class="checklist">
-              <li>A bicycle in safe working condition</li><li>A properly fitted bike helmet</li><li>A secure backpack or ruck</li><li>Your chosen ruck weight</li><li>Water and electrolytes</li><li>Athletic shoes and weather-appropriate clothing</li><li>Sunscreen and a positive attitude</li>
+              <li>A bicycle in safe working condition</li><li>A properly fitted bike helmet</li><li>A secure backpack, ruck, or weighted vest</li><li>Your chosen ruck weight, if needed</li><li>Water and electrolytes</li><li>Athletic shoes and weather-appropriate clothing</li><li>Sunscreen and a positive attitude</li>
             </ul>
           </div>
         </aside>
@@ -97,25 +97,25 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
     </section>
 
     <section class="container" aria-labelledby="routes-heading">
-      <p class="section-kicker">Seamless Route Navigation</p>
-      <h2 class="section-title" id="routes-heading">Your phone shows the route and tells you the turns.</h2>
-      <p class="section-copy">All routes begin and finish at Daniel Island Fitness. After the courses are physically tested, registered participants will receive the official Ride with GPS event link. The free app will show your live location on the route, provide audible and visual turn cues, alert you if you go off course, and allow the route to be downloaded for offline use.</p>
+      <p class="section-kicker">Simple Route Navigation</p>
+      <h2 class="section-title" id="routes-heading">Live GPS when you want it. A simple map when you don’t.</h2>
+      <p class="section-copy">The 5K run, 1-mile ruck, and 5K ride will each have an official route. Every route will include live Ride with GPS navigation plus a simple one-page digital map and cue sheet that can be opened in a browser, saved to a phone, or printed. All routes begin and finish at Daniel Island Fitness.</p>
       <div class="route-grid">
-        <article class="route-card"><div><h3>5K Run Map</h3><p>Measured route with live position, turn cues, and off-course alerts in the Ride with GPS app.</p></div><span class="route-status">Route test in progress</span></article>
-        <article class="route-card"><div><h3>1-Mile Ruck Map</h3><p>A simple course with live position, turn cues, and off-course alerts in the Ride with GPS app.</p></div><span class="route-status">Route test in progress</span></article>
-        <article class="route-card"><div><h3>5K Ride Map</h3><p>A scenic shared-use route selected for safety and minimal road exposure, with live GPS guidance throughout.</p></div><span class="route-status">Route test in progress</span></article>
+        <article class="route-card"><div><h3>5K Run Route</h3><p>Live position and turn-by-turn guidance in the app, plus a one-page route map and simple turn list.</p></div><span class="route-status">Route test in progress</span></article>
+        <article class="route-card"><div><h3>1-Mile Ruck Route</h3><p>Live position and turn-by-turn guidance in the app, plus a one-page route map and simple turn list.</p></div><span class="route-status">Route test in progress</span></article>
+        <article class="route-card"><div><h3>5K Ride Route</h3><p>A scenic shared-use route selected for safety and minimal road exposure, available in both GPS and simple-map formats.</p></div><span class="route-status">Route test in progress</span></article>
       </div>
       <div class="panel navigation-panel">
         <div class="panel-inner">
           <p class="section-kicker">How It Works</p>
-          <h2 style="margin:0;color:var(--off-white);font:900 2.8rem/.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">No route signs required.</h2>
+          <h2 style="margin:0;color:var(--off-white);font:900 2.8rem/.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">One route hub. Two easy options.</h2>
           <div class="navigation-steps">
-            <div class="navigation-step"><b>01</b><p>Register for the discipline or disciplines you plan to complete.</p></div>
-            <div class="navigation-step"><b>02</b><p>Open the event invitation link and create a free Ride with GPS account.</p></div>
-            <div class="navigation-step"><b>03</b><p>Download the free app, select your route, and tap <strong>Navigate</strong>.</p></div>
-            <div class="navigation-step"><b>04</b><p>Follow live location, spoken turns, visual cues, and off-course alerts.</p></div>
+            <div class="navigation-step"><b>01</b><p>Register and receive one Route Hub link containing the official run, ruck, and ride routes.</p></div>
+            <div class="navigation-step"><b>02</b><p>For live guidance, open your route in the free Ride with GPS app and tap <strong>Navigate</strong>.</p></div>
+            <div class="navigation-step"><b>03</b><p>For the simplest option, open or save the one-page digital map and cue sheet—no app account required.</p></div>
+            <div class="navigation-step"><b>04</b><p>Open or download your chosen route before starting. GPS navigation provides live location, spoken and visual turns, and off-course alerts.</p></div>
           </div>
-          <p class="microcopy">The Relentless Ride with GPS event account will unlock navigation for these event routes at no additional cost to participants. Final links will be emailed and placed on this page after course testing.</p>
+          <p class="microcopy">Both navigation options will be available for all three disciplines on this page and in the pre-event email. The Ride with GPS event link will unlock navigation for the official event routes at no additional cost to participants.</p>
         </div>
       </div>
     </section>
