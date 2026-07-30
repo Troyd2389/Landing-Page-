@@ -11,6 +11,10 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
           <p>The event can provide a personal benchmark, but the core experience is community and completion. The bike segment is untimed and must not be raced.</p>
         </details>
         <details>
+          <summary>What can I use for the ruck?</summary>
+          <p>You may use a secure backpack, purpose-built ruck, or weighted vest. The load should be stable, comfortable, and something you can carry with good posture for one mile.</p>
+        </details>
+        <details>
           <summary>How much weight should I carry?</summary>
           <p>Ruck weight is self-selected. Roughly 5–10% of body weight is a reasonable starting range for newer participants. Experienced ruckers may choose 10–15%, while 20% should be reserved for people already conditioned to that load.</p>
         </details>
@@ -23,8 +27,8 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
           <p>Yes. Choose the discipline or combination that fits your current ability. You may run, jog, or walk, select a manageable ruck load, and ride conservatively.</p>
         </details>
         <details>
-          <summary>How will I follow the route?</summary>
-          <p>Registered participants will receive a Ride with GPS event invitation. After creating a free account and downloading the free app, select your route and tap Navigate for live position, spoken and visual turn cues, and off-course alerts. The event invitation unlocks navigation for the event routes.</p>
+          <summary>How will I follow the routes?</summary>
+          <p>All three routes—run, ruck, and ride—will be available in two formats. For live guidance, use the Ride with GPS app for your current location, spoken and visual turn cues, and off-course alerts. For a simpler option, open or save the one-page digital map and cue sheet from the event Route Hub; no app account is required for that option.</p>
         </details>
         <details>
           <summary>Will there be giveaways?</summary>
