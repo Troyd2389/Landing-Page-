@@ -1,9 +1,8 @@
 /*
-  Add the Stripe Payment Link below when it is ready.
-  Public registrations will then be redirected to Stripe after Formspree accepts the form.
-  Relentless and Daniel Island Fitness clients will continue to the local confirmation page.
+  Public registrations are redirected to Stripe after Formspree accepts the form.
+  Relentless and Daniel Island Fitness clients continue directly to the local confirmation page.
 */
-const STRIPE_PAYMENT_LINK = "";
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/5kQeV6euW3zrfRkauW4ZG01";
 
 const form = document.getElementById("event-registration-form");
 const status = document.getElementById("form-status");
@@ -50,13 +49,12 @@ form.addEventListener("submit", async (event) => {
 
     const registrationType = document.getElementById("registration-type").value;
 
-    if (registrationType === "public" && STRIPE_PAYMENT_LINK) {
+    if (registrationType === "public") {
       window.location.href = STRIPE_PAYMENT_LINK;
       return;
     }
 
-    const type = registrationType === "public" ? "public" : "included";
-    window.location.href = `thanks.html?type=${encodeURIComponent(type)}`;
+    window.location.href = "thanks.html?type=included";
   } catch (error) {
     status.textContent = "Something went wrong. Please try again or email troy@relentlesslongevity.com.";
     status.classList.add("error");
