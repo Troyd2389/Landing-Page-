@@ -27,8 +27,16 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
           <p>Yes. Choose the discipline or combination that fits your current ability. You may run, jog, or walk, select a manageable ruck load, and ride conservatively.</p>
         </details>
         <details>
+          <summary>Are the final routes available yet?</summary>
+          <p>They are being physically tested before release. You can register now. Final maps, easy landmark directions, and any helpful public route links will be posted on this page and emailed to every registered participant at least 72 hours before the event.</p>
+        </details>
+        <details>
           <summary>How will I follow the routes?</summary>
-          <p>All three routes—run, ruck, and ride—will be available in two formats. For live guidance, use the Ride with GPS app for your current location, spoken and visual turn cues, and off-course alerts. For a simpler option, open or save the one-page digital map and cue sheet from the event Route Hub; no app account is required for that option.</p>
+          <p>Each discipline will have a simple digital map and short landmark-based directions that can be opened, saved, screenshotted, or printed. Any optional GPS route links that prove useful during testing will also be clearly labeled. No specific app will be required just to access the basic route information.</p>
+        </details>
+        <details>
+          <summary>Where is the event hosted?</summary>
+          <p>Daniel Island Fitness is hosting the founding event at 145 River Landing Drive, Suite 101A, Daniel Island, SC 29492. Every route begins and finishes there.</p>
         </details>
         <details>
           <summary>Will there be giveaways?</summary>
