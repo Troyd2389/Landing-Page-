@@ -17,7 +17,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
     <section class="hero">
       <div class="hero-grid container">
         <div>
-          <span class="eyebrow">Founding Community Event · 50 Spots</span>
+          <span class="eyebrow">Presented by Relentless · Hosted by Daniel Island Fitness · 50 Spots</span>
           <h1 class="hero-title">Run <span class="green">•</span> Ruck <span class="green">•</span> Ride</h1>
           <p class="hero-lead">Choose one, two, or all three: a 5K run, 1-mile ruck, and 5K scenic ride—built around movement, challenge, connection, and becoming stronger every day.</p>
           <div class="hero-actions">
@@ -33,7 +33,8 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
             <dl class="event-facts">
               <div class="event-fact"><dt>Date</dt><dd>Saturday, August 29, 2026</dd></div>
               <div class="event-fact"><dt>Start</dt><dd>8:00 a.m. · Check-in begins at 7:30</dd></div>
-              <div class="event-fact"><dt>Location</dt><dd>Daniel Island Fitness<br />145 River Landing Drive, Suite 101A</dd></div>
+              <div class="event-fact"><dt>Host</dt><dd>Daniel Island Fitness</dd></div>
+              <div class="event-fact"><dt>Address</dt><dd>145 River Landing Drive, Suite 101A<br />Daniel Island, SC 29492</dd></div>
               <div class="event-fact"><dt>Format</dt><dd>Choose: 5K Run · 1-Mile Ruck · 5K Scenic Ride</dd></div>
               <div class="event-fact"><dt>Capacity</dt><dd>Limited to 50 participants</dd></div>
             </dl>
@@ -46,7 +47,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
     <section id="format" class="container" aria-labelledby="format-heading">
       <p class="section-kicker">The Relentless Founding Format</p>
       <h2 class="section-title" id="format-heading">Choose one, two, or all three.</h2>
-      <p class="section-copy">Build the morning around your current ability and interests. Register for the 5K run, 1-mile ruck, 5K scenic ride, or any combination. Each route begins and finishes at Daniel Island Fitness.</p>
+      <p class="section-copy">Build the morning around your current ability and interests. Register for the 5K run, 1-mile ruck, 5K scenic ride, or any combination. Every route begins and finishes at Daniel Island Fitness, the host location for the founding event.</p>
       <div class="format-grid">
         <article class="discipline" data-step="1">
           <h3>Run</h3><span class="distance">5 kilometers · 3.1 miles</span>
@@ -60,7 +61,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
         </article>
         <article class="discipline" data-step="3">
           <h3>Ride</h3><span class="distance">5 kilometers · Scenic ride</span>
-          <p>The ride is intentionally untimed. It is a scenic, leisure-paced route supported by live GPS navigation and turn-by-turn cues.</p>
+          <p>The ride is intentionally untimed. It is a scenic, leisure-paced route designed around control, shared-trail awareness, and enjoying the Daniel Island waterfront.</p>
           <p><strong>No e-bikes.</strong> Helmets are mandatory.</p>
         </article>
       </div>
@@ -80,7 +81,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
             <li>Slow down at crossings, blind turns, narrow sections, and congested areas.</li>
             <li>Pass only when there is ample room and clearly announce, “Passing on your left.”</li>
             <li>No drafting, racing, aggressive passing, or headphones during the ride.</li>
-            <li>Use the official route, stay alert for navigation cues, and obey all traffic controls.</li>
+            <li>Use the official route, stay alert, and obey all traffic controls.</li>
             <li>Unsafe riding may result in removal from the event.</li>
           </ul>
         </div>
@@ -97,25 +98,25 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
     </section>
 
     <section class="container" aria-labelledby="routes-heading">
-      <p class="section-kicker">Simple Route Navigation</p>
-      <h2 class="section-title" id="routes-heading">Live GPS when you want it. A simple map when you don’t.</h2>
-      <p class="section-copy">The 5K run, 1-mile ruck, and 5K ride will each have an official route. Every route will include live Ride with GPS navigation plus a simple one-page digital map and cue sheet that can be opened in a browser, saved to a phone, or printed. All routes begin and finish at Daniel Island Fitness.</p>
+      <p class="section-kicker">Final Route Details</p>
+      <h2 class="section-title" id="routes-heading">Simple maps. Clear landmarks. Optional route links.</h2>
+      <p class="section-copy">The run, ruck, and ride routes are being physically tested before they are released. Final maps, easy landmark-based directions, and any helpful public route links will be posted on this page and emailed to every registered participant at least 72 hours before the event. All routes begin and finish at Daniel Island Fitness.</p>
       <div class="route-grid">
-        <article class="route-card"><div><h3>5K Run Route</h3><p>Live position and turn-by-turn guidance in the app, plus a one-page route map and simple turn list.</p></div><span class="route-status">Route test in progress</span></article>
-        <article class="route-card"><div><h3>1-Mile Ruck Route</h3><p>Live position and turn-by-turn guidance in the app, plus a one-page route map and simple turn list.</p></div><span class="route-status">Route test in progress</span></article>
-        <article class="route-card"><div><h3>5K Ride Route</h3><p>A scenic shared-use route selected for safety and minimal road exposure, available in both GPS and simple-map formats.</p></div><span class="route-status">Route test in progress</span></article>
+        <article class="route-card"><div><h3>5K Run Route</h3><p>A measured waterfront course with a simple map and short landmark directions.</p></div><span class="route-status">Final testing in progress</span></article>
+        <article class="route-card"><div><h3>1-Mile Ruck Route</h3><p>A straightforward one-mile course with a simple map and short landmark directions.</p></div><span class="route-status">Final testing in progress</span></article>
+        <article class="route-card"><div><h3>5K Ride Route</h3><p>A scenic shared-use route selected for safety, simplicity, and minimal road exposure.</p></div><span class="route-status">Final testing in progress</span></article>
       </div>
       <div class="panel navigation-panel">
         <div class="panel-inner">
-          <p class="section-kicker">How It Works</p>
-          <h2 style="margin:0;color:var(--off-white);font:900 2.8rem/.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">One route hub. Two easy options.</h2>
+          <p class="section-kicker">How Route Updates Work</p>
+          <h2 style="margin:0;color:var(--off-white);font:900 2.8rem/.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">Register now. Receive one clear route update.</h2>
           <div class="navigation-steps">
-            <div class="navigation-step"><b>01</b><p>Register and receive one Route Hub link containing the official run, ruck, and ride routes.</p></div>
-            <div class="navigation-step"><b>02</b><p>For live guidance, open your route in the free Ride with GPS app and tap <strong>Navigate</strong>.</p></div>
-            <div class="navigation-step"><b>03</b><p>For the simplest option, open or save the one-page digital map and cue sheet—no app account required.</p></div>
-            <div class="navigation-step"><b>04</b><p>Open or download your chosen route before starting. GPS navigation provides live location, spoken and visual turns, and off-course alerts.</p></div>
+            <div class="navigation-step"><b>01</b><p>Register now for the discipline or disciplines you plan to complete.</p></div>
+            <div class="navigation-step"><b>02</b><p>Relentless will physically test and finalize every distance, turn, and landmark.</p></div>
+            <div class="navigation-step"><b>03</b><p>You will receive one email with the official run, ruck, and ride maps and directions.</p></div>
+            <div class="navigation-step"><b>04</b><p>Open, save, screenshot, or print the route information before event morning. Any optional GPS links will be clearly labeled.</p></div>
           </div>
-          <p class="microcopy">Both navigation options will be available for all three disciplines on this page and in the pre-event email. The Ride with GPS event link will unlock navigation for the official event routes at no additional cost to participants.</p>
+          <p class="microcopy">You will not need to keep checking the website. Final route information and important event updates will be sent to the email used during registration.</p>
         </div>
       </div>
     </section>
@@ -135,7 +136,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
         <blockquote class="mission-quote">Build the capability to live fully.</blockquote>
         <div class="mission-copy">
           <p>Relentless exists to help people build and preserve the strength, resilience, and physical capability to live fully—for themselves, their families, and future generations.</p>
-          <p>Run • Ruck • Ride brings that mission to life through challenge, community, connection, and shared experiences. The event is one part of a broader system built around understanding where you stand physically and knowing what to do next.</p>
+          <p>Hosted by Daniel Island Fitness, Run • Ruck • Ride brings that mission to life through challenge, community, connection, and shared experiences. The event is one part of a broader system built around understanding where you stand physically and knowing what to do next.</p>
           <a class="button secondary" href="../#early-access-form">Explore the Relentless Assessment</a>
         </div>
       </div>
