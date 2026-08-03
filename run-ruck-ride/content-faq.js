@@ -35,6 +35,10 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
           <p>Each discipline will have a simple digital map and short landmark-based directions that can be opened, saved, screenshotted, or printed. Any optional GPS route links that prove useful during testing will also be clearly labeled. No specific app will be required just to access the basic route information.</p>
         </details>
         <details>
+          <summary>How does public registration work?</summary>
+          <p>Complete the registration form first, then continue to Stripe to pay the $10 registration fee. Your public spot is confirmed after payment. Each participant must register and pay separately so emergency information and activity acknowledgments are complete.</p>
+        </details>
+        <details>
           <summary>Where is the event hosted?</summary>
           <p>Daniel Island Fitness is hosting the founding event at 145 River Landing Drive, Suite 101A, Daniel Island, SC 29492. Every route begins and finishes there.</p>
         </details>
@@ -58,6 +62,8 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
     <div class="footer-row container">
       <span>© 2026 Relentless. Stronger Every Day.</span>
       <div>
+        <span>Hosted by Daniel Island Fitness</span>
+        &nbsp;·&nbsp;
         <a href="../">Relentless Home</a>
         &nbsp;·&nbsp;
         <a href="mailto:troy@relentlesslongevity.com">Contact</a>
