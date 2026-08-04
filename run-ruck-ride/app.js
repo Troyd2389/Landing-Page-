@@ -10,6 +10,21 @@ const submitButton = form.querySelector('button[type="submit"]');
 const disciplineChoices = Array.from(document.querySelectorAll(".discipline-choice"));
 const rideChoice = document.getElementById("discipline-ride");
 const bikeType = document.getElementById("bike-type");
+const ageRange = document.getElementById("age-range");
+const signerRole = document.getElementById("signer-role");
+const guardianRelationshipField = document.getElementById("guardian-relationship-field");
+const guardianRelationship = document.getElementById("guardian-relationship");
+const signedAt = document.getElementById("signed-at");
+
+function updateGuardianFields() {
+  const guardianSelected = signerRole.value === "parent-guardian";
+  guardianRelationshipField.hidden = !guardianSelected;
+  guardianRelationship.required = guardianSelected;
+  if (!guardianSelected) guardianRelationship.value = "";
+}
+
+signerRole.addEventListener("change", updateGuardianFields);
+updateGuardianFields();
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -33,6 +48,31 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
+  if (ageRange.value === "Under 18" && signerRole.value !== "parent-guardian") {
+    status.textContent = "A parent or legal guardian must sign for a participant under 18.";
+    status.classList.add("error");
+    status.style.display = "block";
+    signerRole.focus();
+    return;
+  }
+
+  if (ageRange.value !== "Under 18" && signerRole.value === "parent-guardian") {
+    status.textContent = "Select “Participant, age 18 or older” unless the participant is under 18.";
+    status.classList.add("error");
+    status.style.display = "block";
+    signerRole.focus();
+    return;
+  }
+
+  if (signerRole.value === "parent-guardian" && !guardianRelationship.value.trim()) {
+    status.textContent = "Enter the parent or legal guardian’s relationship to the minor participant.";
+    status.classList.add("error");
+    status.style.display = "block";
+    guardianRelationship.focus();
+    return;
+  }
+
+  signedAt.value = new Date().toISOString();
   submitButton.disabled = true;
   submitButton.textContent = "Submitting…";
 
