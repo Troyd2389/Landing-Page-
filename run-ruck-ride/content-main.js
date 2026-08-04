@@ -32,7 +32,9 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
             <h2>Founding Event</h2>
             <dl class="event-facts">
               <div class="event-fact"><dt>Date</dt><dd>Saturday, August 29, 2026</dd></div>
-              <div class="event-fact"><dt>Start</dt><dd>8:00 a.m. · Check-in begins at 7:30</dd></div>
+              <div class="event-fact"><dt>Check-In</dt><dd>8:00 a.m.</dd></div>
+              <div class="event-fact"><dt>Briefing</dt><dd>8:20 a.m.</dd></div>
+              <div class="event-fact"><dt>Start</dt><dd>8:30 a.m.</dd></div>
               <div class="event-fact"><dt>Host</dt><dd>Daniel Island Fitness</dd></div>
               <div class="event-fact"><dt>Address</dt><dd>145 River Landing Drive, Suite 101A<br />Daniel Island, SC 29492</dd></div>
               <div class="event-fact"><dt>Format</dt><dd>Choose: 5K Run · 1-Mile Ruck · 5K Scenic Ride</dd></div>
@@ -98,25 +100,25 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `
     </section>
 
     <section class="container" aria-labelledby="routes-heading">
-      <p class="section-kicker">Final Route Details</p>
-      <h2 class="section-title" id="routes-heading">Simple maps. Clear landmarks. Optional route links.</h2>
-      <p class="section-copy">The run, ruck, and ride routes are being physically tested before they are released. Final maps, easy landmark-based directions, and any helpful public route links will be posted on this page and emailed to every registered participant at least 72 hours before the event. All routes begin and finish at Daniel Island Fitness.</p>
+      <p class="section-kicker">Route Information</p>
+      <h2 class="section-title" id="routes-heading">Simple maps. Clear directions. Optional Strava links.</h2>
+      <p class="section-copy">Official digital maps, simple landmark-based directions, and direct Strava route links will be emailed to every registered participant at least 72 hours before the event. Maps and written directions can be saved, screenshotted, or printed, so Strava is optional. All routes begin and finish at Daniel Island Fitness.</p>
       <div class="route-grid">
-        <article class="route-card"><div><h3>5K Run Route</h3><p>A measured waterfront course with a simple map and short landmark directions.</p></div><span class="route-status">Final testing in progress</span></article>
-        <article class="route-card"><div><h3>1-Mile Ruck Route</h3><p>A straightforward one-mile course with a simple map and short landmark directions.</p></div><span class="route-status">Final testing in progress</span></article>
-        <article class="route-card"><div><h3>5K Ride Route</h3><p>A scenic shared-use route selected for safety, simplicity, and minimal road exposure.</p></div><span class="route-status">Final testing in progress</span></article>
+        <article class="route-card"><div><h3>5K Run Route</h3><p>A measured waterfront course with a digital map, simple landmark directions, and an optional direct Strava link.</p></div><span class="route-status">Included in route email</span></article>
+        <article class="route-card"><div><h3>1-Mile Ruck Route</h3><p>A straightforward one-mile course with a digital map, simple landmark directions, and an optional direct Strava link.</p></div><span class="route-status">Included in route email</span></article>
+        <article class="route-card"><div><h3>5K Ride Route</h3><p>A scenic shared-use route with a digital map, simple landmark directions, and an optional direct Strava link.</p></div><span class="route-status">Included in route email</span></article>
       </div>
       <div class="panel navigation-panel">
         <div class="panel-inner">
-          <p class="section-kicker">How Route Updates Work</p>
-          <h2 style="margin:0;color:var(--off-white);font:900 2.8rem/.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">Register now. Receive one clear route update.</h2>
+          <p class="section-kicker">How Route Information Works</p>
+          <h2 style="margin:0;color:var(--off-white);font:900 2.8rem/.95 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;">Register now. Get everything in one email.</h2>
           <div class="navigation-steps">
-            <div class="navigation-step"><b>01</b><p>Register now for the discipline or disciplines you plan to complete.</p></div>
-            <div class="navigation-step"><b>02</b><p>Relentless will physically test and finalize every distance, turn, and landmark.</p></div>
-            <div class="navigation-step"><b>03</b><p>You will receive one email with the official run, ruck, and ride maps and directions.</p></div>
-            <div class="navigation-step"><b>04</b><p>Open, save, screenshot, or print the route information before event morning. Any optional GPS links will be clearly labeled.</p></div>
+            <div class="navigation-step"><b>01</b><p>Register for the discipline or disciplines you plan to complete.</p></div>
+            <div class="navigation-step"><b>02</b><p>At least 72 hours before the event, receive one email with official maps, written directions, and direct Strava links.</p></div>
+            <div class="navigation-step"><b>03</b><p>Open, save, screenshot, or print the map and directions before event morning.</p></div>
+            <div class="navigation-step"><b>04</b><p>Strava is optional. Open the direct link in the app or browser if helpful; no app is required to participate.</p></div>
           </div>
-          <p class="microcopy">You will not need to keep checking the website. Final route information and important event updates will be sent to the email used during registration.</p>
+          <p class="microcopy">You will not need to keep checking the website. Route information and important event updates will be sent to the email used during registration.</p>
         </div>
       </div>
     </section>
