@@ -36,7 +36,11 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
         </details>
         <details>
           <summary>How does public registration work?</summary>
-          <p>Complete the registration form first, then continue to Stripe to pay the $10 registration fee. Your public spot is confirmed after payment. Each participant must register and pay separately so emergency information and activity acknowledgments are complete.</p>
+          <p>Complete the registration form first, including the required participant waiver and electronic signature, then continue to Stripe to pay the $10 registration fee. Your public spot is confirmed after payment. Each participant must register and pay separately so emergency information, route choices, and waiver records are complete.</p>
+        </details>
+        <details>
+          <summary>Do I have to sign a waiver?</summary>
+          <p>Yes. Every participant must accept the event waiver and type a full legal name as an electronic signature. A parent or legal guardian must complete and sign the registration for a participant under 18. The full waiver can be opened, printed, or saved before registration is submitted.</p>
         </details>
         <details>
           <summary>Where is the event hosted?</summary>
