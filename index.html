@@ -72,6 +72,31 @@
 
       section { padding: clamp(3rem, 7vw, 5.8rem) 0; }
 
+      .event-banner { padding: 1.25rem 0 0; }
+
+      .event-banner-inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.5rem;
+        align-items: center;
+        padding: clamp(1.25rem, 3vw, 1.8rem);
+      }
+
+      .event-banner-copy { min-width: 0; }
+
+      .event-banner-title {
+        margin: 0.25rem 0 0.45rem;
+        color: var(--off-white);
+        font-size: clamp(1.9rem, 4vw, 3.15rem);
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+      }
+
+      .event-banner-details { margin: 0; color: var(--soft-white); }
+      .event-banner-note { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; }
+      .event-banner .cta-button { min-width: 250px; max-width: none; }
+
       .hero { min-height: auto; display: grid; align-items: center; padding-top: 2.8rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
 
       .hero-content { max-width: 900px; }
@@ -243,6 +268,8 @@
       @media (max-width: 820px) {
         .container { width: min(100% - 28px, 1120px); }
         header { padding-top: 1rem; }
+        .event-banner-inner { grid-template-columns: 1fr; }
+        .event-banner .cta-button { width: 100%; min-width: 0; max-width: 430px; }
         .hero { padding: 2.6rem 0 3rem; }
         .cards, .story-grid { grid-template-columns: 1fr; }
         .brand { align-items: center; text-align: center; }
@@ -260,6 +287,20 @@
         <img class="brand-logo" src="IMG_3581.jpeg" alt="Relentless" />
       </div>
     </header>
+
+    <section class="event-banner container" aria-labelledby="event-banner-heading">
+      <div class="panel">
+        <div class="event-banner-inner">
+          <div class="event-banner-copy">
+            <span class="eyebrow">Founding Community Event · 50 Spots</span>
+            <h2 class="event-banner-title" id="event-banner-heading">Relentless Run • Ruck • Ride</h2>
+            <p class="event-banner-details">Saturday, August 29 · Daniel Island Fitness · Check-in 8:00 a.m. · Start 8:30 a.m.</p>
+            <p class="event-banner-note">Choose the 5K run, 1-mile ruck, 5K scenic ride, or any combination. $10 public registration; active Relentless and Daniel Island Fitness clients are included.</p>
+          </div>
+          <a class="cta-button" href="run-ruck-ride/">Register for Run • Ruck • Ride</a>
+        </div>
+      </div>
+    </section>
 
     <main>
       <section class="hero container" aria-labelledby="hero-heading">
