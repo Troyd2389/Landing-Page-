@@ -143,6 +143,7 @@
 
     .field { display: grid; gap: 0.42rem; }
     .field.full { grid-column: 1 / -1; }
+    [hidden] { display: none !important; }
 
     label,
     legend {
@@ -173,6 +174,41 @@
     textarea:focus {
       border-color: rgba(143, 176, 112, 0.95);
       box-shadow: 0 0 0 4px rgba(95, 127, 77, 0.18);
+    }
+
+    .waiver-summary {
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.15rem;
+      border: 1px solid rgba(216, 179, 109, 0.42);
+      border-radius: 0.95rem;
+      background: linear-gradient(145deg, rgba(76, 55, 24, 0.24), rgba(7, 9, 8, 0.62));
+    }
+
+    .waiver-summary h3 {
+      margin: 0;
+      color: var(--off-white);
+      font: 900 1.9rem/1 "Barlow Condensed", Impact, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .waiver-summary p {
+      margin: 0;
+      color: var(--soft-white);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .legal-link {
+      color: #d9e5d1;
+      font-weight: 800;
+      text-underline-offset: 0.2em;
+    }
+
+    .signature-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     .checkbox-row {
