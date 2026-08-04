@@ -5,7 +5,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section id="re
           <h2 class="section-title" id="register-heading">Claim one of 50 spots.</h2>
           <p class="section-copy">Presented by Relentless and hosted by Daniel Island Fitness at 145 River Landing Drive, Suite 101A. Public registration is $10. Active Relentless coaching clients and Daniel Island Fitness clients are included at no additional cost and will be verified after registration.</p>
           <p class="registration-price"><span>$10</span> Public<br />Free for Relentless + DI Fitness clients</p>
-          <p class="microcopy">Public participants will continue to secure Stripe checkout after submitting this form. Final route maps, landmark directions, and event instructions will be emailed to every registered participant at least 72 hours before the event.</p>
+          <p class="microcopy">Public participants will continue to secure Stripe checkout after submitting this form. Official digital route maps, landmark directions, optional Strava links, and event instructions will be emailed to every registered participant at least 72 hours before the event.</p>
         </div>
 
         <div class="panel">
@@ -90,7 +90,7 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section id="re
               <div class="checkbox-row"><input id="photo-consent" type="checkbox" name="photo_consent" value="Consented" /><label for="photo-consent">I consent to appearing in event photography or video that may be used by Relentless to document and promote the community. This is optional.</label></div>
 
               <button class="button" type="submit">Submit Registration</button>
-              <p class="form-note">Public participants are redirected to Stripe to complete the $10 payment. A public spot is confirmed after payment. Relentless and Daniel Island Fitness client status will be verified, and final route information will be sent to the email entered above.</p>
+              <p class="form-note">Public participants are redirected to Stripe to complete the $10 payment. A public spot is confirmed after payment. Relentless and Daniel Island Fitness client status will be verified, and official route information will be sent to the email entered above.</p>
               <p id="form-status" class="status" role="status" aria-live="polite"></p>
             </form>
           </div>
