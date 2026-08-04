@@ -47,6 +47,10 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
           <p>Yes. Every participant must accept the event waiver and type a full legal name as an electronic signature. A parent or legal guardian must complete and sign the registration for a participant under 18. The full waiver can be opened, printed, or saved before registration is submitted.</p>
         </details>
         <details>
+          <summary>Will photos or video be taken?</summary>
+          <p>Yes. Photography and video recording will occur during the event for documentation and reasonable promotion of Relentless and Daniel Island Fitness. Registration includes a required media release. A separate permission will be requested before a participant’s name is used in a testimonial or personal endorsement.</p>
+        </details>
+        <details>
           <summary>Where is the event hosted?</summary>
           <p>Daniel Island Fitness is hosting the founding event at 145 River Landing Drive, Suite 101A, Daniel Island, SC 29492. Every route begins and finishes there.</p>
         </details>
