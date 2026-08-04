@@ -27,12 +27,16 @@ document.getElementById("site").insertAdjacentHTML("beforeend", `<section class=
           <p>Yes. Choose the discipline or combination that fits your current ability. You may run, jog, or walk, select a manageable ruck load, and ride conservatively.</p>
         </details>
         <details>
-          <summary>Are the final routes available yet?</summary>
-          <p>They are being physically tested before release. You can register now. Final maps, easy landmark directions, and any helpful public route links will be posted on this page and emailed to every registered participant at least 72 hours before the event.</p>
+          <summary>What time should I arrive?</summary>
+          <p>Check-in opens at 8:00 a.m. Please arrive by 8:15 so you are ready for the welcome and safety briefing at 8:20. The event begins at 8:30 a.m.</p>
+        </details>
+        <details>
+          <summary>When will I receive the routes?</summary>
+          <p>Official digital maps, simple landmark directions, and optional direct Strava links will be emailed to every registered participant at least 72 hours before the event. The route information will also be added to this page.</p>
         </details>
         <details>
           <summary>How will I follow the routes?</summary>
-          <p>Each discipline will have a simple digital map and short landmark-based directions that can be opened, saved, screenshotted, or printed. Any optional GPS route links that prove useful during testing will also be clearly labeled. No specific app will be required just to access the basic route information.</p>
+          <p>Each discipline will have a digital map and short landmark-based directions that can be opened, saved, screenshotted, or printed. Participants who prefer Strava can open the direct link provided in the route email. No specific app is required to participate.</p>
         </details>
         <details>
           <summary>How does public registration work?</summary>
