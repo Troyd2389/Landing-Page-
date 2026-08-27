@@ -3,19 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RELENTLESS | Stronger Every Day</title>
+    <title>Relentless Reset | Health & Fitness Coaching | Charleston, SC</title>
+    <meta name="description" content="The Relentless Reset is a 12-week health and fitness program combining a comprehensive physical assessment, RN health assessment, personalized coaching, progress tracking, and reassessment." />
+    <meta property="og:title" content="The Relentless Reset | Stronger Every Day" />
+    <meta property="og:description" content="Know where you stand. Improve what matters. Spend 12 weeks becoming stronger, healthier, and more capable." />
     <style>
       :root {
         --bg: #070908;
         --graphite: #101411;
         --charcoal: #171b18;
         --surface: rgba(20, 25, 21, 0.82);
-        --surface-strong: #121713;
         --off-white: #ebece6;
         --soft-white: #d5d8cf;
         --muted: #9ea597;
         --green: #2f4a32;
-        --green-bright: #5f7f4d;
+        --green-bright: #6f9159;
         --green-deep: #17291a;
         --line: rgba(95, 127, 77, 0.28);
         --line-strong: rgba(95, 127, 77, 0.48);
@@ -23,20 +25,17 @@
       }
 
       * { box-sizing: border-box; }
-
       html { scroll-behavior: smooth; }
-
       body {
         margin: 0;
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: var(--soft-white);
         background:
-          radial-gradient(circle at 12% 10%, rgba(47, 74, 50, 0.34), transparent 32rem),
+          radial-gradient(circle at 12% 8%, rgba(47, 74, 50, 0.34), transparent 32rem),
           radial-gradient(circle at 88% 0%, rgba(23, 41, 26, 0.62), transparent 36rem),
           linear-gradient(180deg, #080a09 0%, #0d100e 44%, #070908 100%);
         line-height: 1.65;
       }
-
       body::before {
         content: "";
         position: fixed;
@@ -46,65 +45,34 @@
         background-size: 48px 48px;
         mask-image: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent 72%);
       }
-
+      a { color: inherit; }
       .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+      section { padding: clamp(3.2rem, 7vw, 6rem) 0; }
 
-      header { padding: 1rem 0 0; }
-
-      .brand { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.28rem; }
-
-      .brand-logo {
-        width: clamp(130px, 16vw, 190px);
-        height: auto;
-        object-fit: contain;
-        object-position: left center;
-        display: block;
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(95, 127, 77, 0.16);
+        background: rgba(7, 9, 8, 0.88);
+        backdrop-filter: blur(14px);
       }
-
-      .wordmark-main {
-        margin: 0;
-        color: var(--off-white);
-        font-size: clamp(1.8rem, 4vw, 2.75rem);
-        font-weight: 900;
-        letter-spacing: 0.18em;
-        line-height: 1;
-      }
-
-      section { padding: clamp(3rem, 7vw, 5.8rem) 0; }
-
-      .event-banner { padding: 1.25rem 0 0; }
-
-      .event-banner-inner {
-        position: relative;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 1.5rem;
+      .nav {
+        min-height: 76px;
+        display: flex;
         align-items: center;
-        padding: clamp(1.25rem, 3vw, 1.8rem);
+        justify-content: space-between;
+        gap: 1.25rem;
       }
-
-      .event-banner-copy { min-width: 0; }
-
-      .event-banner-title {
-        margin: 0.25rem 0 0.45rem;
-        color: var(--off-white);
-        font-size: clamp(1.9rem, 4vw, 3.15rem);
-        line-height: 0.95;
-        letter-spacing: -0.035em;
-      }
-
-      .event-banner-details { margin: 0; color: var(--soft-white); }
-      .event-banner-note { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; }
-      .event-banner .cta-button { min-width: 250px; max-width: none; }
-
-      .hero { min-height: auto; display: grid; align-items: center; padding-top: 2.8rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
-
-      .hero-content { max-width: 900px; }
+      .brand-logo { width: clamp(132px, 15vw, 182px); height: auto; display: block; }
+      .nav-links { display: flex; align-items: center; gap: 1.25rem; font-size: 0.9rem; }
+      .nav-links a { color: var(--soft-white); text-decoration: none; }
+      .nav-links a:hover { color: var(--off-white); }
 
       .eyebrow {
         display: inline-flex;
         margin-bottom: 1rem;
-        padding: 0.32rem 0.66rem;
+        padding: 0.34rem 0.7rem;
         border: 1px solid var(--line);
         border-radius: 999px;
         background: rgba(18, 23, 19, 0.74);
@@ -114,51 +82,50 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
       }
-
       h1, h2, h3, p { margin-top: 0; }
-
       h1 {
         margin-bottom: 1rem;
-        max-width: 900px;
+        max-width: 920px;
         color: var(--off-white);
-        font-size: clamp(2.45rem, 6vw, 5.15rem);
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.93;
+        letter-spacing: -0.052em;
+      }
+      h2.section-title {
+        color: var(--off-white);
+        font-size: clamp(2rem, 4.8vw, 3.9rem);
         line-height: 1;
         letter-spacing: -0.045em;
+        margin-bottom: 1.1rem;
       }
-
-      .lead {
-        max-width: 760px;
-        color: var(--soft-white);
-        font-size: clamp(1rem, 1.65vw, 1.22rem);
-        line-height: 1.54;
-      }
-
-      .supporting { max-width: 760px; color: var(--muted); font-size: 1rem; }
+      h3 { color: var(--off-white); }
+      .lead { max-width: 800px; color: var(--soft-white); font-size: clamp(1.08rem, 1.8vw, 1.3rem); line-height: 1.55; }
+      .supporting { max-width: 800px; color: var(--muted); font-size: 1rem; }
+      .section-copy { max-width: 840px; color: var(--soft-white); font-size: 1.05rem; }
+      .section-copy p:last-child { margin-bottom: 0; }
+      .accent { color: #c4d7b6; }
 
       .cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; margin-top: 1.75rem; }
-
       .cta-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 2.95rem;
-        max-width: 360px;
-        padding: 0.78rem 1.2rem;
-        border: 1px solid rgba(95, 127, 77, 0.7);
+        min-height: 3rem;
+        max-width: 370px;
+        padding: 0.8rem 1.25rem;
+        border: 1px solid rgba(111, 145, 89, 0.76);
         border-radius: 999px;
         color: #f2f4ed;
-        background: linear-gradient(135deg, #314f34 0%, #203923 52%, #142516 100%);
+        background: linear-gradient(135deg, #36573a 0%, #244128 52%, #172b19 100%);
         box-shadow: 0 18px 44px rgba(20, 49, 24, 0.36);
         font-size: 0.95rem;
         font-weight: 800;
         text-decoration: none;
-        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        transition: transform 180ms ease, border-color 180ms ease;
       }
-
-      .cta-button:hover { transform: translateY(-2px); border-color: rgba(143, 176, 112, 0.9); }
-
+      .cta-button:hover { transform: translateY(-2px); border-color: rgba(155, 188, 125, 0.95); }
       .cta-button.secondary { background: rgba(16, 20, 17, 0.72); color: var(--off-white); box-shadow: none; }
-
+      .nav-cta { min-height: 2.45rem; padding: 0.58rem 1rem; }
       .microcopy { margin: 0.85rem 0 0; color: var(--muted); font-size: 0.92rem; }
 
       .panel {
@@ -169,7 +136,6 @@
         background: linear-gradient(145deg, rgba(23, 27, 24, 0.94), rgba(12, 15, 13, 0.9));
         box-shadow: var(--shadow);
       }
-
       .panel::before {
         content: "";
         position: absolute;
@@ -177,127 +143,111 @@
         pointer-events: none;
         background: radial-gradient(circle at 15% 0%, rgba(95, 127, 77, 0.16), transparent 28rem);
       }
+      .panel-inner { position: relative; padding: clamp(1.5rem, 4vw, 2.7rem); }
 
-      .panel-inner { position: relative; padding: clamp(1.5rem, 4vw, 2.6rem); }
+      .event-banner { padding: 1.2rem 0 0; }
+      .event-banner-inner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: center; padding: clamp(1.15rem, 3vw, 1.65rem); }
+      .event-banner-title { margin: 0.2rem 0 0.42rem; color: var(--off-white); font-size: clamp(1.65rem, 3.4vw, 2.6rem); line-height: 1; letter-spacing: -0.035em; }
+      .event-banner-details { margin: 0; color: var(--soft-white); }
+      .event-banner-note { margin: 0.36rem 0 0; color: var(--muted); font-size: 0.9rem; }
 
-      .section-title { color: var(--off-white); font-size: clamp(2rem, 4.8vw, 3.9rem); line-height: 1; letter-spacing: -0.045em; margin-bottom: 1.1rem; }
+      .hero { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem); }
+      .hero-content { max-width: 940px; }
+      .hero-kicker { margin-bottom: 0.7rem; color: #c6d0bf; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 750; }
+      .hero-proof { display: flex; flex-wrap: wrap; gap: 0.7rem 1.25rem; margin-top: 1.65rem; color: var(--muted); font-size: 0.92rem; }
+      .hero-proof span::before { content: "✓"; margin-right: 0.45rem; color: #9bbb82; font-weight: 900; }
 
-      .section-copy { max-width: 820px; color: var(--soft-white); font-size: 1.05rem; }
-      .section-copy p:last-child { margin-bottom: 0; }
+      .problem-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+      .question-list { display: grid; gap: 0.75rem; margin-top: 0.4rem; }
+      .question { padding: 0.9rem 1rem; border-left: 3px solid rgba(111,145,89,0.72); background: rgba(10,13,11,0.42); color: var(--soft-white); }
 
-      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.8rem; }
+      .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+      .step, .card { border: 1px solid var(--line); border-radius: 1.05rem; background: rgba(10, 13, 11, 0.5); padding: 1.3rem; }
+      .step-number { display: inline-flex; width: 2rem; height: 2rem; align-items: center; justify-content: center; border-radius: 50%; background: var(--green-deep); border: 1px solid var(--line-strong); color: #d9e4d2; font-weight: 900; margin-bottom: 0.8rem; }
+      .step h3, .card h3 { margin-bottom: 0.45rem; font-size: 1.2rem; }
+      .step p, .card p { margin-bottom: 0; color: var(--muted); }
 
-      .card { border: 1px solid var(--line); border-radius: 1.05rem; background: rgba(10, 13, 11, 0.48); padding: 1.25rem; }
-      .card h3 { margin-bottom: 0.45rem; color: var(--off-white); font-size: 1.25rem; }
-      .card p { margin-bottom: 0; color: var(--muted); }
+      .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.8rem; }
+      .card strong { display: block; color: var(--off-white); margin-bottom: 0.2rem; }
 
-      .story-grid { display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.1fr; gap: clamp(1.2rem, 4vw, 2.6rem); align-items: center; }
+      .fit-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem 1.2rem; margin-top: 1.5rem; }
+      .fit-item { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.9rem 1rem; border: 1px solid rgba(95,127,77,0.18); border-radius: 0.9rem; background: rgba(10,13,11,0.35); }
+      .fit-item::before { content: "✓"; color: #9bbb82; font-weight: 900; }
 
-      .story-photo {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 1.25rem;
-        border: 1px solid var(--line-strong);
-        box-shadow: 0 0 0 8px rgba(47, 74, 50, 0.08), 0 30px 80px rgba(0, 0, 0, 0.48);
-        display: block;
-      }
+      .coach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.8rem; }
+      .coach-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 1.05rem; background: rgba(10,13,11,0.5); }
+      .coach-role { margin: -0.15rem 0 0.8rem; color: #b8c9ad; font-size: 0.88rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+      .coach-card p:last-child { margin-bottom: 0; color: var(--muted); }
+
+      .story-grid { display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.1fr; gap: clamp(1.4rem, 4vw, 2.8rem); align-items: center; }
+      .story-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; border-radius: 1.25rem; border: 1px solid var(--line-strong); box-shadow: 0 0 0 8px rgba(47, 74, 50, 0.08), 0 30px 80px rgba(0, 0, 0, 0.48); display: block; }
+      .manifesto { font-size: clamp(1.25rem, 2.1vw, 1.65rem); line-height: 1.45; color: var(--off-white); }
+      .disclaimer { margin-top: 1.2rem; color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
 
       .final-cta { text-align: center; }
       .final-cta .section-copy { margin: 0 auto; }
       .final-cta .cta-row { justify-content: center; }
 
-      .form-section { padding-top: 0; padding-bottom: 4rem; }
-
-      .lead-form-wrap {
-        max-width: 760px;
-        margin: 0 auto;
-      }
-
-      .lead-form {
-        display: grid;
-        gap: 1rem;
-        margin-top: 1.6rem;
-        text-align: left;
-      }
-
-      .form-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
+      .form-section { padding-top: 0; padding-bottom: 5rem; }
+      .lead-form-wrap { max-width: 780px; margin: 0 auto; }
+      .lead-form { display: grid; gap: 1rem; margin-top: 1.6rem; text-align: left; }
+      .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
       .field { display: grid; gap: 0.42rem; }
-
       .field.full { grid-column: 1 / -1; }
-
-      label {
-        color: var(--off-white);
-        font-size: 0.84rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      input, select, textarea {
-        width: 100%;
-        border: 1px solid rgba(95, 127, 77, 0.34);
-        border-radius: 0.9rem;
-        background: rgba(7, 9, 8, 0.78);
-        color: var(--off-white);
-        font: inherit;
-        min-height: 3.1rem;
-        padding: 0.85rem 0.95rem;
-        outline: none;
-        transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
-      }
-
-      textarea { min-height: 8rem; resize: vertical; }
-
+      label { color: var(--off-white); font-size: 0.84rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+      input, select, textarea { width: 100%; border: 1px solid rgba(95, 127, 77, 0.34); border-radius: 0.9rem; background: rgba(7, 9, 8, 0.78); color: var(--off-white); font: inherit; min-height: 3.1rem; padding: 0.85rem 0.95rem; outline: none; transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+      textarea { min-height: 7rem; resize: vertical; }
       input::placeholder, textarea::placeholder { color: rgba(213, 216, 207, 0.52); }
-
-      input:focus, select:focus, textarea:focus {
-        border-color: rgba(143, 176, 112, 0.9);
-        background: rgba(10, 13, 11, 0.96);
-        box-shadow: 0 0 0 4px rgba(95, 127, 77, 0.18), 0 0 34px rgba(95, 127, 77, 0.12);
-      }
-
+      input:focus, select:focus, textarea:focus { border-color: rgba(143, 176, 112, 0.9); background: rgba(10, 13, 11, 0.96); box-shadow: 0 0 0 4px rgba(95, 127, 77, 0.18), 0 0 34px rgba(95, 127, 77, 0.12); }
       .form-note { margin: 0; color: var(--muted); font-size: 0.9rem; }
+      footer { padding: 0 0 2.5rem; text-align: center; color: var(--muted); font-size: 0.9rem; }
+      footer strong { color: var(--off-white); letter-spacing: 0.12em; }
 
-      @media (max-width: 820px) {
-        .container { width: min(100% - 28px, 1120px); }
-        header { padding-top: 1rem; }
-        .event-banner-inner { grid-template-columns: 1fr; }
-        .event-banner .cta-button { width: 100%; min-width: 0; max-width: 430px; }
-        .hero { padding: 2.6rem 0 3rem; }
-        .cards, .story-grid { grid-template-columns: 1fr; }
-        .brand { align-items: center; text-align: center; }
-        .brand-logo { object-position: center; }
+      @media (max-width: 900px) {
+        .nav-links a:not(.cta-button) { display: none; }
+        .event-banner-inner, .problem-grid, .story-grid { grid-template-columns: 1fr; }
+        .steps { grid-template-columns: repeat(2, 1fr); }
+        .coach-grid, .cards { grid-template-columns: 1fr; }
+        .event-banner .cta-button { width: 100%; max-width: 430px; }
         .story-photo { aspect-ratio: 16 / 12; }
+      }
+      @media (max-width: 640px) {
+        .container { width: min(100% - 28px, 1120px); }
+        section { padding: 3.4rem 0; }
+        .nav { min-height: 68px; }
+        .nav-cta { font-size: 0.82rem; }
+        .steps, .fit-list, .form-grid { grid-template-columns: 1fr; }
         .cta-button { width: 100%; max-width: 430px; }
         .cta-row { align-items: stretch; }
-        .form-grid { grid-template-columns: 1fr; }
+        .hero-proof { display: grid; gap: 0.5rem; }
       }
     </style>
   </head>
   <body>
-    <header class="container">
-      <div class="brand" aria-label="Relentless brand">
-        <img class="brand-logo" src="IMG_3581.jpeg" alt="Relentless" />
+    <header>
+      <div class="nav container">
+        <a href="#top" aria-label="Relentless home"><img class="brand-logo" src="IMG_3581.jpeg" alt="Relentless" /></a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#included">What's Included</a>
+          <a href="#about">About</a>
+          <a class="cta-button nav-cta" href="#start">Start Your Reset</a>
+        </nav>
       </div>
     </header>
+
+    <div id="top"></div>
 
     <section class="event-banner container" aria-labelledby="event-banner-heading">
       <div class="panel">
         <div class="event-banner-inner">
-          <div class="event-banner-copy">
-            <span class="eyebrow">Founding Community Event · 50 Spots</span>
+          <div>
+            <span class="eyebrow">Community Event · Saturday, August 29</span>
             <h2 class="event-banner-title" id="event-banner-heading">Relentless Run • Ruck • Ride</h2>
-            <p class="event-banner-details">Saturday, August 29 · Daniel Island Fitness · Check-in 8:00 a.m. · Start 8:30 a.m.</p>
-            <p class="event-banner-note">Choose the 5K run, 1-mile ruck, 5K scenic ride, or any combination. $10 public registration; active Relentless and Daniel Island Fitness clients are included.</p>
+            <p class="event-banner-details">Daniel Island Fitness · Check-in 8:00 a.m. · Start 8:30 a.m.</p>
+            <p class="event-banner-note">Choose the 5K run, 1-mile ruck, 5K scenic ride, or any combination. Giveaways for participants.</p>
           </div>
-          <a class="cta-button" href="run-ruck-ride/">Register for Run • Ruck • Ride</a>
+          <a class="cta-button" href="run-ruck-ride/">Event Details & Registration</a>
         </div>
       </div>
     </section>
@@ -305,64 +255,153 @@
     <main>
       <section class="hero container" aria-labelledby="hero-heading">
         <div class="hero-content">
-          <span class="eyebrow">Early Access Now Open</span>
-          <h1 id="hero-heading">Know Where You Stand. Improve What Matters.</h1>
-          <p class="lead">Relentless is building a smarter way to understand, improve, and preserve your physical capabilities through objective assessments, intelligent software, AI tools, and real human coaching.</p>
-          <p class="supporting">Most people train without truly knowing where they stand. Relentless is designed to change that.</p>
-          <div class="cta-row" aria-label="Early access calls to action">
-            <a class="cta-button" href="#early-access-form">Get Early Access</a>
-            <a class="cta-button secondary" href="#early-access-form">Apply for a Relentless Assessment</a>
+          <span class="eyebrow">Introducing the 12-Week Relentless Reset</span>
+          <h1 id="hero-heading">Stronger. Healthier. More Capable.</h1>
+          <p class="hero-kicker">Know where you stand. Improve what matters. Become stronger every day.</p>
+          <p class="lead">The <strong>Relentless Reset</strong> combines a comprehensive physical assessment, an RN health assessment, and 12 weeks of personalized health and fitness coaching to help you make measurable progress in the areas that matter most.</p>
+          <p class="supporting">Instead of guessing what you should work on, we establish your baseline, identify your priorities, build your plan, coach you through it, and reassess at the end.</p>
+          <div class="cta-row">
+            <a class="cta-button" href="#start">Start Your Relentless Reset</a>
+            <a class="cta-button secondary" href="#how-it-works">See How It Works</a>
           </div>
-          <p class="microcopy">Follow the build. Get updates. Be first in line as Relentless grows.</p>
+          <div class="hero-proof" aria-label="Program highlights">
+            <span>Physical Assessment</span>
+            <span>RN Health Assessment</span>
+            <span>Personalized Coaching</span>
+            <span>12-Week Reassessment</span>
+          </div>
         </div>
       </section>
 
-      <section class="container" aria-labelledby="mission-heading">
+      <section class="container" aria-labelledby="baseline-heading">
+        <div class="problem-grid">
+          <div>
+            <span class="eyebrow">Stop Guessing</span>
+            <h2 class="section-title" id="baseline-heading">Start With a Baseline.</h2>
+            <div class="section-copy">
+              <p>Most people know their weight and a few basic health numbers. That is not the same as knowing how healthy, fit, or physically capable they are.</p>
+              <p>You can't build the right plan if you don't know where you're starting.</p>
+            </div>
+          </div>
+          <div class="question-list" aria-label="Assessment questions">
+            <div class="question">How strong are you for the life you want to keep living?</div>
+            <div class="question">How well do you move, balance, stabilize, and produce power?</div>
+            <div class="question">How strong is your aerobic fitness and recovery?</div>
+            <div class="question">Are your sleep, nutrition, stress, and daily habits helping or holding you back?</div>
+            <div class="question">What should you actually prioritize first?</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container" id="how-it-works" aria-labelledby="system-heading">
         <div class="panel">
           <div class="panel-inner">
-            <h2 class="section-title" id="mission-heading">The Relentless Mission</h2>
-            <div class="section-copy">
-              <p>Relentless is a commitment to never stop improving, no matter what life throws at you.</p>
-              <p>It means using adversity, stress, and challenge as fuel to become stronger physically, mentally, and emotionally.</p>
-              <p>It means showing up when it is hard, pushing forward when others quit, and constantly working to build a stronger body, sharper mind, and better life.</p>
-              <p>It is not about perfection — it is about getting stronger every day.</p>
+            <span class="eyebrow">The Relentless System</span>
+            <h2 class="section-title" id="system-heading">Assess → Understand → Improve → Reassess</h2>
+            <p class="section-copy">The Reset gives you a clear starting point, a personalized path forward, and objective evidence of what changed.</p>
+            <div class="steps">
+              <article class="step">
+                <div class="step-number">1</div>
+                <h3>Assess</h3>
+                <p>Evaluate your physical capability and health behaviors through a comprehensive physical assessment and RN health assessment.</p>
+              </article>
+              <article class="step">
+                <div class="step-number">2</div>
+                <h3>Understand</h3>
+                <p>See where you're doing well, what needs attention, and which areas deserve priority instead of trying to improve everything at once.</p>
+              </article>
+              <article class="step">
+                <div class="step-number">3</div>
+                <h3>Improve</h3>
+                <p>Follow a personalized 12-week plan with guided fitness coaching, RN-led health and wellness coaching, tracking, and accountability.</p>
+              </article>
+              <article class="step">
+                <div class="step-number">4</div>
+                <h3>Reassess</h3>
+                <p>Measure what changed, identify your next priorities, and build the next phase from a better baseline.</p>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="container" aria-labelledby="system-heading">
-        <h2 class="section-title" id="system-heading">A Better System for Health and Fitness</h2>
-        <div class="section-copy">
-          <p>Most people are left guessing. They may know their weight, how they feel, or that they should exercise more — but they often do not know which physical capabilities matter most, where they are improving, or where they are falling behind.</p>
-          <p>Relentless is being built to replace guesswork with awareness, direction, and action.</p>
-        </div>
+      <section class="container" id="included" aria-labelledby="included-heading">
+        <span class="eyebrow">What You Get</span>
+        <h2 class="section-title" id="included-heading">Your Relentless Reset Includes</h2>
         <div class="cards">
-          <article class="card">
-            <h3>Understand</h3>
-            <p>Know where you stand with objective assessments and clear feedback.</p>
+          <article class="card"><strong>Comprehensive Physical Assessment</strong><p>Establish your baseline across strength, aerobic fitness, mobility, stability, balance, power, movement quality, and functional capability.</p></article>
+          <article class="card"><strong>RN Health Assessment</strong><p>Review health history, basic health markers and vitals, sleep, recovery, stress, nutrition habits, medications and supplements, lifestyle, and personal health goals.</p></article>
+          <article class="card"><strong>Personalized 12-Week Plan</strong><p>A clear strategy built around your assessment results, goals, lifestyle, and highest-priority areas.</p></article>
+          <article class="card"><strong>Guided Fitness Coaching</strong><p>Personalized training, exercise progression, technique guidance, strength and cardiovascular development, mobility, adjustments, and accountability.</p></article>
+          <article class="card"><strong>RN-Led Health & Wellness Coaching</strong><p>Practical health education, sleep and recovery support, nutrition and lifestyle guidance, behavior-change coaching, and ongoing accountability.</p></article>
+          <article class="card"><strong>Progress Tracking & Reassessment</strong><p>Track consistency and meaningful progress throughout the program, then reassess at 12 weeks so you can see what changed and what comes next.</p></article>
+        </div>
+        <div class="cta-row"><a class="cta-button" href="#start">I'm Ready to Get Started</a></div>
+      </section>
+
+      <section class="container" aria-labelledby="who-heading">
+        <div class="panel">
+          <div class="panel-inner">
+            <span class="eyebrow">Who It's For</span>
+            <h2 class="section-title" id="who-heading">You Don't Need to Be an Athlete. You Need to Want to Improve.</h2>
+            <p class="section-copy">The Relentless Reset is designed for people who want a clearer, more complete approach to improving their health and physical capability.</p>
+            <div class="fit-list">
+              <div class="fit-item">You want to get back in shape but aren't sure where to start.</div>
+              <div class="fit-item">You already exercise but want to know whether your training is improving what matters.</div>
+              <div class="fit-item">You want to become stronger, fitter, healthier, and more capable as you age.</div>
+              <div class="fit-item">You've spent years putting work, family, and responsibilities ahead of your own health.</div>
+              <div class="fit-item">You know what you should be doing but struggle with consistency and accountability.</div>
+              <div class="fit-item">You want a personalized plan instead of another generic program.</div>
+            </div>
+            <p class="manifesto" style="margin-top:1.8rem; margin-bottom:0;">If you care about what your body will be capable of 10, 20, or 30 years from now, <span class="accent">Relentless was built for you.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container" id="about" aria-labelledby="coaches-heading">
+        <span class="eyebrow">Two Sides. One Plan.</span>
+        <h2 class="section-title" id="coaches-heading">Fitness + RN-Led Health Coaching</h2>
+        <p class="section-copy">Relentless brings physical capability and health behavior coaching together so your plan reflects more than workouts alone.</p>
+        <div class="coach-grid">
+          <article class="coach-card">
+            <h3>Troy</h3>
+            <div class="coach-role">Health & Fitness Coach</div>
+            <p>Troy leads the physical side of Relentless — assessing capability, developing personalized training, progressing strength and fitness, and helping clients build bodies that remain capable for life.</p>
           </article>
-          <article class="card">
-            <h3>Improve</h3>
-            <p>Follow smarter guidance built around your current level, goals, and long-term capability.</p>
+          <article class="coach-card">
+            <h3>Liz, RN</h3>
+            <div class="coach-role">RN Health & Wellness Coach</div>
+            <p>Liz brings her nursing background to the health side of Relentless — helping clients better understand their health history, lifestyle, basic health markers, recovery, nutrition habits, medications and supplements, and the behaviors that influence long-term health.</p>
           </article>
-          <article class="card">
-            <h3>Keep Going</h3>
-            <p>Track progress, retest, and keep building strength, resilience, and confidence over time.</p>
-          </article>
+        </div>
+        <p class="disclaimer">RN-led health and wellness coaching through Relentless focuses on health education, lifestyle and behavior change, accountability, and appropriate referral. It does not replace medical evaluation, diagnosis, or treatment from your healthcare provider.</p>
+      </section>
+
+      <section class="container" aria-labelledby="longevity-heading">
+        <div class="panel">
+          <div class="panel-inner">
+            <span class="eyebrow">Built for Longevity</span>
+            <h2 class="section-title" id="longevity-heading">Measured by Capability.</h2>
+            <p class="manifesto">Longevity isn't only about living longer. It's about being able to <strong>use the years you have.</strong></p>
+            <div class="section-copy">
+              <p>To lift. Run. Travel. Play. Work. Explore. Keep up with your kids and grandkids. Get off the ground. Carry what needs carrying. Handle physical challenges when life demands it.</p>
+              <p>Relentless focuses on building and preserving physical capability — not simply chasing a number on the scale.</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="container" aria-labelledby="story-heading">
         <div class="story-grid">
-          <img class="story-photo" src="IMG_3567.jpeg" alt="Troy and Elizabeth with their family" />
+          <img class="story-photo" src="IMG_3567.jpeg" alt="Troy and Liz with their family" />
           <div>
-            <h2 class="section-title" id="story-heading">Built From a Bigger Why</h2>
+            <span class="eyebrow">The Bigger Why</span>
+            <h2 class="section-title" id="story-heading">Stronger Every Day.</h2>
             <div class="section-copy">
-              <p>Relentless was created by Troy, a health and fitness coach, husband, and father who believes fitness is about far more than workouts.</p>
-              <p>For Troy, the mission is personal: to stay strong and capable for his family, to help others take ownership of their health, and to build a system that gives people a clearer path forward.</p>
-              <p>His wife Elizabeth, a registered nurse with experience in preventive and age-management health, has helped shape the belief that people need to be proactive, informed, and involved in their long-term well-being.</p>
-              <p>Relentless brings together coaching, objective assessment, AI-enabled tools, and real human guidance to help people become physically capable for life.</p>
+              <p>Relentless is built around a simple belief: <strong>we should never stop working to become stronger versions of ourselves.</strong></p>
+              <p>Not perfection. Progress, consistency, and capability.</p>
+              <p>For Troy and Liz, that mission starts with their own family. Relentless was created to build a better system for taking ownership of health, understanding physical capability, and creating a clear path toward becoming stronger over time.</p>
+              <p><strong>Stronger Every Day.</strong></p>
             </div>
           </div>
         </div>
@@ -371,24 +410,23 @@
       <section class="final-cta container" aria-labelledby="final-heading">
         <div class="panel">
           <div class="panel-inner">
-            <h2 class="section-title" id="final-heading">Follow the Relentless Journey</h2>
-            <p class="section-copy">Relentless is currently being built and tested. Join the early-access list to follow the process, receive updates, and be first in line as new features, assessments, and coaching options open.</p>
-            <div class="cta-row" aria-label="Final calls to action">
-              <a class="cta-button" href="#early-access-form">Get Early Access</a>
-              <a class="cta-button secondary" href="#early-access-form">Apply for a Relentless Assessment</a>
-            </div>
-            <p class="microcopy">The assessment option is for people who want personal guidance now while the Relentless platform is being built.</p>
+            <span class="eyebrow">Your Next Step</span>
+            <h2 class="section-title" id="final-heading">Your Next 12 Weeks Can Change Your Trajectory.</h2>
+            <p class="section-copy">You don't need another random workout plan or more health information without knowing what to do with it. Start by finding out where you stand. Then we'll build from there.</p>
+            <div class="cta-row"><a class="cta-button" href="#start">Start Your Relentless Reset</a></div>
+            <p class="microcopy">No pressure. Start with a conversation about your goals and whether Relentless makes sense for you.</p>
           </div>
         </div>
       </section>
 
-      <section class="form-section container" id="early-access-form" aria-labelledby="form-heading">
+      <section class="form-section container" id="start" aria-labelledby="form-heading">
         <div class="panel lead-form-wrap">
           <div class="panel-inner">
-            <h2 class="section-title" id="form-heading">Join the Relentless Early Access List</h2>
-            <p class="section-copy">Get updates as Relentless is built, tested, and opened to early users. You can also let us know if you are interested in a Relentless Assessment.</p>
+            <span class="eyebrow">Start Here</span>
+            <h2 class="section-title" id="form-heading">Start Your Relentless Reset</h2>
+            <p class="section-copy">Tell us a little about yourself and what you'd most like to improve. We'll reach out to answer your questions and determine whether the Relentless Reset is the right fit.</p>
             <form class="lead-form" method="POST" action="https://formspree.io/f/xgojegzy">
-              <input type="hidden" name="_subject" value="New Relentless Early Access Lead" />
+              <input type="hidden" name="_subject" value="New Relentless Reset Lead" />
               <div class="form-grid">
                 <div class="field">
                   <label for="first-name">First Name</label>
@@ -398,27 +436,38 @@
                   <label for="email">Email</label>
                   <input id="email" type="email" name="email" required />
                 </div>
-                <div class="field full">
-                  <label for="interest">Interest</label>
-                  <select id="interest" name="interest" required>
-                    <option value="" disabled selected>Select your interest</option>
-                    <option>Get Early Access</option>
-                    <option>Relentless Assessment</option>
-                    <option>Coaching Updates</option>
-                    <option>Just Following Along</option>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" type="tel" name="phone" autocomplete="tel" />
+                </div>
+                <div class="field">
+                  <label for="goal">Primary Goal</label>
+                  <select id="goal" name="primary_goal" required>
+                    <option value="" disabled selected>What would you most like to improve?</option>
+                    <option>Overall health and fitness</option>
+                    <option>Strength and physical capability</option>
+                    <option>Cardiovascular fitness</option>
+                    <option>Weight or body composition</option>
+                    <option>Energy, sleep, and recovery</option>
+                    <option>Consistency and accountability</option>
+                    <option>I'm not sure yet</option>
                   </select>
                 </div>
                 <div class="field full">
-                  <label for="message">Optional Message</label>
-                  <textarea id="message" name="message" placeholder="Anything you want us to know?"></textarea>
+                  <label for="message">Anything Else We Should Know?</label>
+                  <textarea id="message" name="message" placeholder="Tell us about your goals, what you've been struggling with, or what you're hoping to change."></textarea>
                 </div>
               </div>
-              <button class="cta-button" type="submit">Join Early Access</button>
-              <p class="form-note">We’ll only use this to send Relentless updates and follow up if you request assessment information.</p>
+              <button class="cta-button" type="submit">Start My Reset</button>
+              <p class="form-note">Submitting this form does not commit you to the program. We'll use your information only to follow up about Relentless.</p>
             </form>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="container">
+      <p><strong>RELENTLESS</strong><br />Stronger Every Day.<br />Health · Fitness · Capability · Longevity</p>
+    </footer>
   </body>
 </html>
