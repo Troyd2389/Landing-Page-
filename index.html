@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Relentless Reset | Health & Fitness Coaching | Charleston, SC</title>
     <meta name="description" content="The Relentless Reset is a 12-week health and fitness program combining a comprehensive physical assessment, RN health assessment, personalized coaching, progress tracking, and reassessment." />
+    <link rel="icon" type="image/png" href="relentless-logo.png" />
+    <link rel="apple-touch-icon" href="relentless-logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://relentlesslongevity.com/" />
     <meta property="og:title" content="The Relentless Reset | Stronger Every Day" />
     <meta property="og:description" content="Know where you stand. Improve what matters. Spend 12 weeks becoming stronger, healthier, and more capable." />
+    <meta property="og:image" content="https://relentlesslongevity.com/relentless-logo.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:image:alt" content="Relentless — Stronger Every Day" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The Relentless Reset | Stronger Every Day" />
+    <meta name="twitter:description" content="Know where you stand. Improve what matters. Spend 12 weeks becoming stronger, healthier, and more capable." />
+    <meta name="twitter:image" content="https://relentlesslongevity.com/relentless-logo.png" />
     <style>
       :root {
         --bg: #070908;
@@ -58,13 +70,13 @@
         backdrop-filter: blur(14px);
       }
       .nav {
-        min-height: 76px;
+        min-height: 92px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1.25rem;
       }
-      .brand-logo { width: clamp(132px, 15vw, 182px); height: auto; display: block; }
+      .brand-logo { width: 76px; height: 76px; object-fit: contain; display: block; }
       .nav-links { display: flex; align-items: center; gap: 1.25rem; font-size: 0.9rem; }
       .nav-links a { color: var(--soft-white); text-decoration: none; }
       .nav-links a:hover { color: var(--off-white); }
@@ -214,7 +226,8 @@
       @media (max-width: 640px) {
         .container { width: min(100% - 28px, 1120px); }
         section { padding: 3.4rem 0; }
-        .nav { min-height: 68px; }
+        .nav { min-height: 78px; }
+        .brand-logo { width: 62px; height: 62px; }
         .nav-cta { font-size: 0.82rem; }
         .steps, .fit-list, .form-grid { grid-template-columns: 1fr; }
         .cta-button { width: 100%; max-width: 430px; }
@@ -226,7 +239,7 @@
   <body>
     <header>
       <div class="nav container">
-        <a href="#top" aria-label="Relentless home"><img class="brand-logo" src="IMG_3581.jpeg" alt="Relentless" /></a>
+        <a href="#top" aria-label="Relentless home"><img class="brand-logo" src="relentless-logo.png" alt="Relentless — Stronger Every Day" /></a>
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#how-it-works">How It Works</a>
           <a href="#included">What's Included</a>
