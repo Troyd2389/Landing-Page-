@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community | Relentless</title>
+  <meta name="description" content="Relentless community events bring people together around movement, health, fitness, capability, and stronger living. Explore Run Ruck Ride event details, future events, photos, and recaps." />
+  <link rel="icon" type="image/png" href="../relentless-logo.png" />
+  <link rel="apple-touch-icon" href="../relentless-logo.png" />
+  <link rel="canonical" href="https://relentlesslongevity.com/community/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://relentlesslongevity.com/community/" />
+  <meta property="og:title" content="Relentless Community | Stronger Together" />
+  <meta property="og:description" content="Community events built around movement, health, fitness, capability, and connection." />
+  <meta property="og:image" content="https://relentlesslongevity.com/relentless-logo.png" />
+  <style>
+    :root {
+      --bg: #070908;
+      --off-white: #ebece6;
+      --soft-white: #d5d8cf;
+      --muted: #9ea597;
+      --green: #2f4a32;
+      --green-bright: #6f9159;
+      --green-deep: #17291a;
+      --line: rgba(95, 127, 77, 0.28);
+      --line-strong: rgba(95, 127, 77, 0.5);
+      --shadow: 0 28px 80px rgba(0,0,0,.42);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--soft-white);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(47,74,50,.34), transparent 32rem),
+        radial-gradient(circle at 88% 0%, rgba(23,41,26,.62), transparent 36rem),
+        linear-gradient(180deg, #080a09 0%, #0d100e 44%, #070908 100%);
+      line-height: 1.65;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.65), transparent 72%);
+    }
+    a { color: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(95,127,77,.16);
+      background: rgba(7,9,8,.88);
+      backdrop-filter: blur(14px);
+    }
+    .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
+    .brand-logo { width: 76px; height: 76px; object-fit: contain; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; font-size: .9rem; }
+    .nav-links a { color: var(--soft-white); text-decoration: none; }
+    .nav-links a:hover, .nav-links .active { color: var(--off-white); }
+    .nav-links .active { font-weight: 800; }
+    main { position: relative; }
+    section { padding: clamp(3.2rem, 7vw, 6rem) 0; }
+    .hero { padding-top: clamp(4rem, 8vw, 7rem); }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: .34rem .7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(18,23,19,.74);
+      color: #c6d0bf;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 1rem;
+      max-width: 900px;
+      color: var(--off-white);
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: .94;
+      letter-spacing: -.052em;
+    }
+    h2 {
+      color: var(--off-white);
+      font-size: clamp(2rem, 4.8vw, 3.7rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+      margin-bottom: 1rem;
+    }
+    h3 { color: var(--off-white); }
+    .lead { max-width: 820px; color: var(--soft-white); font-size: clamp(1.08rem, 1.8vw, 1.3rem); line-height: 1.55; }
+    .supporting { max-width: 820px; color: var(--muted); }
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.35rem;
+      background: linear-gradient(145deg, rgba(23,27,24,.94), rgba(12,15,13,.9));
+      box-shadow: var(--shadow);
+    }
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 15% 0%, rgba(95,127,77,.16), transparent 28rem);
+    }
+    .panel-inner { position: relative; padding: clamp(1.5rem, 4vw, 2.7rem); }
+    .event-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+    .event-title { margin-bottom: .6rem; font-size: clamp(2.1rem, 5vw, 4.2rem); line-height: .96; letter-spacing: -.04em; }
+    .event-meta { display: grid; gap: .6rem; margin: 1.3rem 0; color: var(--soft-white); }
+    .event-meta div { padding-bottom: .6rem; border-bottom: 1px solid rgba(95,127,77,.18); }
+    .event-meta strong { color: var(--off-white); }
+    .options { display: grid; gap: .7rem; margin-top: 1rem; }
+    .option { padding: .9rem 1rem; border: 1px solid rgba(95,127,77,.22); border-radius: .9rem; background: rgba(10,13,11,.42); }
+    .option strong { color: var(--off-white); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.6rem; }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: .8rem 1.25rem;
+      border: 1px solid rgba(111,145,89,.76);
+      border-radius: 999px;
+      color: #f2f4ed;
+      background: linear-gradient(135deg, #36573a 0%, #244128 52%, #172b19 100%);
+      box-shadow: 0 18px 44px rgba(20,49,24,.36);
+      font-size: .95rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .cta-button.secondary { background: rgba(16,20,17,.72); box-shadow: none; }
+    .nav-cta { min-height: 2.45rem; padding: .58rem 1rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.8rem; }
+    .card { border: 1px solid var(--line); border-radius: 1.05rem; background: rgba(10,13,11,.5); padding: 1.35rem; }
+    .card h3 { margin-bottom: .45rem; }
+    .card p { margin-bottom: 0; color: var(--muted); }
+    .coming-soon {
+      min-height: 240px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 1px dashed var(--line-strong);
+      border-radius: 1.2rem;
+      background: rgba(10,13,11,.32);
+      color: var(--muted);
+      padding: 2rem;
+    }
+    .coming-soon strong { display: block; color: var(--off-white); font-size: 1.25rem; margin-bottom: .4rem; }
+    footer { padding: 1rem 0 2.5rem; text-align: center; color: var(--muted); font-size: .9rem; }
+    footer strong { color: var(--off-white); letter-spacing: .12em; }
+    @media (max-width: 900px) {
+      .nav-links a:not(.cta-button) { display: none; }
+      .event-grid, .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .nav { min-height: 78px; }
+      .brand-logo { width: 62px; height: 62px; }
+      .nav-cta { font-size: .82rem; }
+      section { padding: 3.4rem 0; }
+      .cta-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <a href="../" aria-label="Relentless home"><img class="brand-logo" src="../relentless-logo.png" alt="Relentless — Stronger Every Day" /></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../">Reset</a>
+        <a class="active" href="./">Community</a>
+        <a class="cta-button nav-cta" href="../#start">Start Your Reset</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="eyebrow">Relentless Community</span>
+      <h1>Stronger Together.</h1>
+      <p class="lead">Relentless is more than a coaching program. We're building a community around movement, health, fitness, capability, and doing things that make us stronger for life.</p>
+      <p class="supporting">This is the home for Relentless community events, upcoming opportunities, event recaps, photos, and the local health and wellness partners helping us build something valuable together.</p>
+    </section>
+
+    <section class="container" style="padding-top:0;">
+      <div class="panel">
+        <div class="panel-inner event-grid">
+          <div>
+            <span class="eyebrow">Featured Community Event</span>
+            <h2 class="event-title">Run • Ruck • Ride</h2>
+            <p class="lead">A fun, approachable community health and fitness event built for all fitness levels. Choose your challenge, move at your own pace, and spend the morning doing something good for yourself alongside other people doing the same.</p>
+            <div class="options">
+              <div class="option"><strong>5K Run</strong> — walk, jog, or run.</div>
+              <div class="option"><strong>1-Mile Ruck</strong> — weighted vest or backpack optional.</div>
+              <div class="option"><strong>5K Scenic Ride</strong> — or combine events and build your own morning.</div>
+            </div>
+            <div class="cta-row">
+              <a class="cta-button" href="../run-ruck-ride/">Event Details & Registration</a>
+            </div>
+          </div>
+          <div>
+            <div class="event-meta">
+              <div><strong>Saturday, August 29, 2026</strong></div>
+              <div><strong>Daniel Island Fitness</strong><br />145 River Landing Drive, Suite 101A</div>
+              <div><strong>Check-in:</strong> 8:00 a.m.<br /><strong>Start:</strong> 8:30 a.m.</div>
+              <div><strong>Public registration:</strong> $10<br /><strong>Active Relentless + Daniel Island Fitness clients:</strong> Included</div>
+            </div>
+            <p class="supporting">Local health and wellness professionals, services, giveaways, and community partners will be part of the event experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <span class="eyebrow">What Community Means</span>
+      <h2>Move. Connect. Keep Building.</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Events</h3>
+          <p>Approachable community events that make movement fun and give people different ways to participate.</p>
+        </article>
+        <article class="card">
+          <h3>Health & Wellness</h3>
+          <p>Connect with useful local health, fitness, recovery, and wellness resources that support long-term capability.</p>
+        </article>
+        <article class="card">
+          <h3>People</h3>
+          <p>Build relationships with people who care about getting stronger, staying capable, and improving together.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="photos">
+      <span class="eyebrow">Event Recaps</span>
+      <h2>Photos + Community Highlights</h2>
+      <div class="coming-soon">
+        <div>
+          <strong>Founding Run • Ruck • Ride recap coming soon.</strong>
+          Photos, partner highlights, and future event information will live here after the event.
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top:0;">
+      <div class="panel">
+        <div class="panel-inner" style="text-align:center;">
+          <span class="eyebrow">The Core Mission</span>
+          <h2>Community Supports the Work. The Reset Builds the Plan.</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">If you're ready for a personalized approach to improving your health and physical capability, the 12-week Relentless Reset is the place to start.</p>
+          <div class="cta-row" style="justify-content:center;">
+            <a class="cta-button" href="../#start">Explore the Relentless Reset</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p><strong>RELENTLESS</strong><br />Stronger Every Day.<br />Health · Fitness · Capability · Longevity</p>
+  </footer>
+</body>
+</html>
