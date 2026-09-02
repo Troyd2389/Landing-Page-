@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://relentlesslongevity.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://relentlesslongevity.com/community/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+  <url><loc>https://relentlesslongevity.com/</loc><lastmod>2026-09-02</lastmod></url>
+  <url><loc>https://relentlesslongevity.com/assessment/</loc><lastmod>2026-09-02</lastmod></url>
+  <url><loc>https://relentlesslongevity.com/membership/</loc><lastmod>2026-09-02</lastmod></url>
+  <url><loc>https://relentlesslongevity.com/coaching/</loc><lastmod>2026-09-02</lastmod></url>
+  <url><loc>https://relentlesslongevity.com/reset/</loc><lastmod>2026-09-02</lastmod></url>
+  <url><loc>https://relentlesslongevity.com/community/</loc><lastmod>2026-09-02</lastmod></url>
 </urlset>
